@@ -1,0 +1,175 @@
+{
+  "brand_rules": {
+    "brand_name": "ClientKit",
+    "domain": "https://clientkit.site",
+    "positioning": "Pakistan's #1 Physical + Omnichannel Patient Acquisition Engine for Hospitals, Clinics, Dental Practices & Aesthetic Centers.",
+    "core_guarantee": "Dominate Your 10km Radius in 30 Days — Or We Work For Free.",
+    "four_pillars": [
+      "10km Physical Ground Game (In-person corporate, school, housing society, pharmacy & community outreach)",
+      "Dedicated Medical Telemarketing Unit (Direct outbound calling, corporate HR tie-ups, and instant inquiry-to-chair conversion)",
+      "10km Data Extraction & Hyper-Local Social Retargeting (Scraping and retargeting every high-intent household in a 10km radius)",
+      "100+ Weekly Content Engine (Filming once and repurposing into 100+ short-form videos, reels, and authority assets every single week)"
+    ],
+    "strict_exclusion": "Never mention Razes or B2B agency lead generation. ClientKit is 100% exclusively for hospitals, clinics, doctors, dental practices, and healthcare facilities."
+  },
+  "specialties": [
+    {
+      "slug": "dental-clinic",
+      "name": "Dental Clinic",
+      "doctor_title": "Dentist, Orthodontist & Implantologist",
+      "high_ticket_treatments": "Dental Implants, Clear Aligners, Braces, Porcelain Veneers, Full-Mouth Rehabilitation, Laser Whitening, Root Canals",
+      "avg_treatment_value_pkr": "PKR 45,000 – PKR 250,000",
+      "corporate_outreach_targets": "Private schools (annual dental camps), corporate offices within 10km, universities, banks, and marriage halls (bridal smile makeovers)",
+      "roman_urdu_keywords": ["daanton ka doctor", "dental clinic ki mashoori", "best dentist near me fee"]
+    },
+    {
+      "slug": "aesthetic-skin-clinic",
+      "name": "Aesthetic & Dermatology Clinic",
+      "doctor_title": "Dermatologist & Aesthetic Physician",
+      "high_ticket_treatments": "Laser Hair Removal, Hydrafacial, PRP, Botox & Fillers, Acne Scar Revision, Pigmentation & Anti-Aging Packages",
+      "avg_treatment_value_pkr": "PKR 25,000 – PKR 150,000",
+      "corporate_outreach_targets": "High-end salons, ladies' gyms, corporate women's wings, airlines/hospitality staff, and gated housing societies within 10km",
+      "roman_urdu_keywords": ["skin specialist clinic", "aesthetic clinic marketing", "laser treatment clinic"]
+    },
+    {
+      "slug": "multi-specialty-hospital",
+      "name": "Private & Multi-Specialty Hospital",
+      "doctor_title": "Hospital Director, MS & Department Heads",
+      "high_ticket_treatments": "Elective Surgeries, Maternity & Gynecology Packages, Orthopedics, Cardiology, Laparoscopic Surgery, 24/7 Emergency & IPD Admissions",
+      "avg_treatment_value_pkr": "PKR 80,000 – PKR 600,000+",
+      "corporate_outreach_targets": "Factories, corporate health panels, insurance tie-ups, local GP referral networks, pharmacies, and housing society welfare boards within 10km",
+      "roman_urdu_keywords": ["hospital ki mashoori", "private hospital OPD increase", "best hospital near me"]
+    },
+    {
+      "slug": "hair-transplant-clinic",
+      "name": "Hair Transplant & Restoration Center",
+      "doctor_title": "Hair Transplant Surgeon",
+      "high_ticket_treatments": "FUE Hair Transplant, DHI, Beard/Eyebrow Restoration, Exosome & PRP Therapy",
+      "avg_treatment_value_pkr": "PKR 120,000 – PKR 350,000",
+      "corporate_outreach_targets": "Men's executive clubs, gyms, corporate executives, groom lounges, and overseas Pakistani family networks within 10km",
+      "roman_urdu_keywords": ["hair transplant marketing Pakistan", "hair clinic lead generation"]
+    },
+    {
+      "slug": "diagnostic-lab-imaging",
+      "name": "Diagnostic Lab & Imaging Center",
+      "doctor_title": "Lab Director & Radiologist",
+      "high_ticket_treatments": "MRI, CT Scan, Full-Body Executive Health Checkups, Home Blood Sample Collection, Corporate Screening Panels",
+      "avg_treatment_value_pkr": "PKR 8,000 – PKR 65,000 (High Repeat & Corporate Bulk)",
+      "corporate_outreach_targets": "Independent GP clinics (referral commissions), corporate annual employee screenings, housing societies (free sugar/BP camps), and pharmacies within 10km",
+      "roman_urdu_keywords": ["diagnostic lab marketing", "medical lab home sampling promotion"]
+    },
+    {
+      "slug": "physiotherapy-rehab-center",
+      "name": "Physiotherapy, Spine & Rehab Clinic",
+      "doctor_title": "Doctor of Physical Therapy (DPT) & Rehab Specialist",
+      "high_ticket_treatments": "Spinal Decompression, Post-Stroke Rehab, Sports Injury Recovery, Sciatica & Frozen Shoulder 12-Session Packages",
+      "avg_treatment_value_pkr": "PKR 20,000 – PKR 75,000 per package",
+      "corporate_outreach_targets": "Sports clubs, gyms, IT companies (ergonomic/back-pain camps), orthopedic surgeon referrals, and senior citizen community centers within 10km",
+      "roman_urdu_keywords": ["physiotherapy clinic patients", "kamar dard ka ilaj clinic"]
+    },
+    {
+      "slug": "ivf-fertility-gynecology",
+      "name": "IVF, Fertility & Maternity Center",
+      "doctor_title": "Fertility Specialist & Gynecologist",
+      "high_ticket_treatments": "IVF Cycles, IUI, High-Risk Pregnancy Care, C-Section & Normal Delivery Packages, PCOS Management",
+      "avg_treatment_value_pkr": "PKR 150,000 – PKR 750,000",
+      "corporate_outreach_targets": "Lady Health Visitors (LHVs), peripheral GP clinics, diagnostic ultrasound centers, and private women's community groups within 10km",
+      "roman_urdu_keywords": ["gynecologist clinic marketing", "IVF center marketing Pakistan"]
+    },
+    {
+      "slug": "eye-laser-hospital",
+      "name": "Eye Hospital & LASIK Center",
+      "doctor_title": "Ophthalmologist & LASIK Surgeon",
+      "high_ticket_treatments": "LASIK / Femto Laser Vision Correction, Cataract Phaco Surgery with Imported Lenses, Retina Care",
+      "avg_treatment_value_pkr": "PKR 55,000 – PKR 220,000",
+      "corporate_outreach_targets": "Schools/colleges (free eye screening camps), optical shops within 10km, IT firms, and senior citizen welfare societies",
+      "roman_urdu_keywords": ["eye hospital marketing", "lasik surgery promotion Pakistan"]
+    }
+  ],
+  "locations_database": [
+    {
+      "city": "Lahore",
+      "city_slug": "lahore",
+      "total_clinics_est": 2450,
+      "avg_rating": 4.4,
+      "top3_map_reviews_needed": 185,
+      "localities": [
+        {"name": "DHA Phase 1-8", "slug": "dha-lahore", "landmarks": "Y-Block Commercial, H-Block Market, Ghazi Road, Broadway Commercial Phase 8", "clinics_in_10km": 380, "adjacent": "Cantt, Walton, Gulberg, Model Town"},
+        {"name": "Gulberg", "slug": "gulberg-lahore", "landmarks": "MM Alam Road, Main Boulevard Gulberg, Liberty Market, Jail Road Medical Belt", "clinics_in_10km": 420, "adjacent": "Shadman, Garden Town, Cavalry Ground, DHA"},
+        {"name": "Johar Town", "slug": "johar-town-lahore", "landmarks": "Maulana Shaukat Ali Road Hospital Belt, Doctors Hospital Corridor, Emporium Mall Area", "clinics_in_10km": 460, "adjacent": "Wapda Town, Model Town, Faisal Town, Township"},
+        {"name": "Bahria Town Lahore", "slug": "bahria-town-lahore", "landmarks": "Talwar Chowk, Civic Center, Sector C Commercial, Canal Bank Road", "clinics_in_10km": 210, "adjacent": "Lake City, Valencia Town, Wapda Town, Raiwind Road"},
+        {"name": "Model Town & Faisal Town", "slug": "model-town-lahore", "landmarks": "Model Town Link Road, Bank Square Market, Akbar Chowk, Jinnah Hospital Belt", "clinics_in_10km": 340, "adjacent": "Johar Town, Garden Town, Kot Lakhpat, Gulberg"}
+      ]
+    },
+    {
+      "city": "Islamabad",
+      "city_slug": "islamabad",
+      "total_clinics_est": 1350,
+      "avg_rating": 4.5,
+      "top3_map_reviews_needed": 160,
+      "localities": [
+        {"name": "F-8 Markaz & Blue Area", "slug": "f8-blue-area-islamabad", "landmarks": "Kiran Plaza Medical Belt, Ali Medical Centre, Jinnah Avenue Blue Area, PIMS Corridor", "clinics_in_10km": 390, "adjacent": "F-7, F-6, G-8, F-10"},
+        {"name": "F-10 & F-11 Markaz", "slug": "f10-f11-islamabad", "landmarks": "F-10 Markaz Medical Plazas, Maroof International Hospital Belt, Nazim-ud-Din Road", "clinics_in_10km": 280, "adjacent": "G-10, G-11, E-11, F-8"},
+        {"name": "G-8, G-9 & I-8 Corridor", "slug": "g8-i8-islamabad", "landmarks": "I-8 Markaz Executive Clinics, G-8 Medical Center, Karachi Company G-9", "clinics_in_10km": 310, "adjacent": "Faizabad, Satellite Town Rawalpindi, H-8 (Shifa Belt), F-8"},
+        {"name": "DHA & Bahria Town Islamabad", "slug": "dha-bahria-islamabad", "landmarks": "DHA Phase 2 GT Road Corridor, Civic Center Bahria Phase 4, PWD Main Double Road, Soan Garden", "clinics_in_10km": 290, "adjacent": "Gulberg Greens, Korang Town, Morgah, Rawat"}
+      ]
+    },
+    {
+      "city": "Rawalpindi",
+      "city_slug": "rawalpindi",
+      "total_clinics_est": 1480,
+      "avg_rating": 4.3,
+      "top3_map_reviews_needed": 140,
+      "localities": [
+        {"name": "Satellite Town & Saidpur Road", "slug": "satellite-town-rawalpindi", "landmarks": "Saidpur Road Hospital Corridor, Holy Family Hospital Belt, Commercial Market, Chandni Chowk", "clinics_in_10km": 410, "adjacent": "Shamsabad, Murree Road, Chaklala Scheme 3, I-8 Islamabad"},
+        {"name": "Saddar & Peshawar Road", "slug": "saddar-rawalpindi", "landmarks": "Bank Road, Mall Road AFIC/CMH Belt, Peshawar Road, Westridge", "clinics_in_10km": 320, "adjacent": "Lalazar, Cantt, Raja Bazaar, Chaklala"},
+        {"name": "Bahria Town Phase 7-8 & Chaklala", "slug": "bahria-chaklala-rawalpindi", "landmarks": "Bahria Phase 7 Spring North Commercial, Phase 8 Business District, Chaklala Scheme 3 Commercial, Gulrez", "clinics_in_10km": 275, "adjacent": "DHA Phase 1, Morgah, Airport Housing Society, PWD"}
+      ]
+    },
+    {
+      "city": "Karachi",
+      "city_slug": "karachi",
+      "total_clinics_est": 3200,
+      "avg_rating": 4.4,
+      "top3_map_reviews_needed": 210,
+      "localities": [
+        {"name": "Clifton & DHA Phase 1-8", "slug": "clifton-dha-karachi", "landmarks": "South City Hospital Belt, Ziauddin Clifton, Khayaban-e-Ittehad, Bukhari & Saba Commercial, Teen Talwar", "clinics_in_10km": 520, "adjacent": "Bath Island, PECHS, Defence View, Saddar"},
+        {"name": "Gulshan-e-Iqbal & Bahadurabad", "slug": "gulshan-bahadurabad-karachi", "landmarks": "Stadium Road (Aga Khan / Liaquat National Belt), Rashid Minhas Road, Bahadurabad Char Minar, Tariq Road PECHS", "clinics_in_10km": 590, "adjacent": "Gulistan-e-Johar, Karsaz, Shaheed-e-Millat Medical Corridor"},
+        {"name": "North Nazimabad", "slug": "north-nazimabad-karachi", "landmarks": "Five Star Chowrangi Medical Belt, Sakhi Hassan, Saifee Hospital Corridor, Hyderi Market", "clinics_in_10km": 380, "adjacent": "Federal B Area, Nazimabad, Buffer Zone"}
+      ]
+    },
+    {
+      "city": "Wah Cantt, Taxila & Attock Belt",
+      "city_slug": "northern-punjab-belt",
+      "total_clinics_est": 540,
+      "avg_rating": 4.2,
+      "top3_map_reviews_needed": 65,
+      "localities": [
+        {"name": "Wah Cantt", "slug": "wah-cantt", "landmarks": "The Mall, Aslam Market, Lalazar Medical Complex Belt, Basti, POF Hospital Corridor, GT Road", "clinics_in_10km": 195, "adjacent": "Taxila, New City Phase 2, Wah Model Town, Hassan Abdal"},
+        {"name": "Taxila", "slug": "taxila", "landmarks": "Faisal Shaheed Road, Christian Hospital Taxila Belt, Heavy Mechanical Complex (HMC) Road, Sarai Kala", "clinics_in_10km": 140, "adjacent": "Wah Cantt, Tarnol, Khanpur Road"},
+        {"name": "Attock, Hazro & Chakwal", "slug": "attock-hazro-chakwal", "landmarks": "Civil Bazaar Attock, Dar-ul-Islam Colony, Kamra Road, Hazro Main Road, Talagang Road Chakwal", "clinics_in_10km": 205, "adjacent": "Kamra Cantt, Fateh Jang, Lawrencepur"}
+      ]
+    },
+    {
+      "city": "Faisalabad, Multan, Peshawar & Sialkot",
+      "city_slug": "tier2-metro-hubs",
+      "total_clinics_est": 2900,
+      "avg_rating": 4.3,
+      "top3_map_reviews_needed": 115,
+      "localities": [
+        {"name": "Faisalabad (Jaranwala Road & Kohinoor)", "slug": "faisalabad-kohinoor", "landmarks": "Kohinoor City Medical Plazas, Susan Road, People's Colony, Civil Lines", "clinics_in_10km": 410, "adjacent": "D Ground, Satiana Road, Canal Road"},
+        {"name": "Multan (Nishtar Road & Bosan Road)", "slug": "multan-nishtar-bosan", "landmarks": "Nishtar Road Medical Colony, Abdali Road, Gulgasht Colony, DHA Multan", "clinics_in_10km": 390, "adjacent": "Cantt, Model Town Multan, Buch Villas"},
+        {"name": "Peshawar (Dabgari Gardens & Hayatabad)", "slug": "peshawar-hayatabad", "landmarks": "Dabgari Gardens Doctor Market, Hayatabad Medical Complex (HMC) & RMI Belt, University Road", "clinics_in_10km": 450, "adjacent": "Saddar Peshawar, Cantt, Ring Road"},
+        {"name": "Gujranwala & Sialkot", "slug": "gujranwala-sialkot", "landmarks": "Civil Lines Gujranwala, Satellite Town, Paris Road Sialkot, Cantt Medical Belt", "clinics_in_10km": 360, "adjacent": "Wazirabad, Daska, Citi Housing"}
+      ]
+    }
+  ],
+  "extracted_paa_questions": [
+    "How do I increase daily OPD patients in my private clinic in Pakistan without paying 30% commission to Oladoc or Marham?",
+    "How much does medical or dental clinic marketing cost in Pakistan per month?",
+    "Why do Facebook and Instagram ads bring cheap inquiries that never show up at the clinic?",
+    "How does physical 10km corporate and community outreach bring high-paying hospital and dental patients?",
+    "How long does it take to rank a clinic in the Top 3 of Google Maps in Lahore, Islamabad, or Karachi?",
+    "How can a doctor film content once a week and get 100+ videos posted across all platforms?"
+  ]
+}

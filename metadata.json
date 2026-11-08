@@ -1,0 +1,6 @@
+{
+  "name": "ClientKit - Local Patient Acquisition Engine",
+  "description": "Pixel-perfect clone of ClientKit: Local patient acquisition system for hospitals and clinics featuring territory exclusivity, 5-step patient funnel, 3 execution pillars, real facility showcases, interactive PKR revenue calculator, FAQ accordion, and WhatsApp conversion engine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
