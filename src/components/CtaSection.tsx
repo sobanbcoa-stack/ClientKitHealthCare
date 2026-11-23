@@ -1,123 +1,101 @@
 import React from 'react';
-import { ShieldCheck, MessageSquare, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { WHATSAPP_NUMBER_RAW, openWhatsApp } from '../utils/calculator';
+import { PixelDino, PixelMushroom, PixelHeartCluster } from './BrandArt';
 
 export const CtaSection: React.FC = () => {
   const handleFinalCta = () => {
     openWhatsApp(
       WHATSAPP_NUMBER_RAW,
-      'Hi ClientKit! I want to dominate our 10-kilometer area in 30 days or you work for free. Let\'s chat about reserving our territory.'
+      "Hi ClientKit! I want to dominate our 10-kilometer area in 30 days or you work for free. Let's chat about reserving our territory."
     );
   };
 
   return (
-    <section className="py-20 sm:py-32 bg-slate-900 relative overflow-hidden">
-      {/* LeadArc Style Grid Lines */}
-      <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
+    <section className="relative pt-20 sm:pt-28 bg-[#FAFAFA] border-t-2 border-[#0B0B0B] overflow-hidden">
+      {/* Floating Black 3-Heart Pixel Cluster (Directly echoes PDF Page 14) */}
+      <PixelHeartCluster
+        size="lg"
+        color="#0B0B0B"
+        className="hidden md:block absolute top-14 right-[8%] lg:right-[11%] z-20"
+      />
 
-      {/* Decorative Crosshair Marks */}
-      <div className="absolute top-6 left-6 text-slate-700 font-mono text-xs select-none hidden lg:block">+</div>
-      <div className="absolute top-6 right-6 text-slate-700 font-mono text-xs select-none hidden lg:block">+</div>
-      <div className="absolute bottom-6 left-6 text-slate-700 font-mono text-xs select-none hidden lg:block">+</div>
-      <div className="absolute bottom-6 right-6 text-slate-700 font-mono text-xs select-none hidden lg:block">+</div>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-20">
+        {/* Iconic Thick Crimson Horizontal Bar from Page 14 */}
+        <div className="w-44 sm:w-64 h-2.5 sm:h-3 bg-[#D81919] mx-auto mb-8 sm:mb-10" />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* Pitch Black Hero Container with Topographic Watermark Extending Outside */}
-        <div className="relative rounded-3xl bg-[#030712] border border-slate-800 p-8 sm:p-14 lg:p-16 text-center shadow-2xl overflow-hidden group">
-          {/* Subtle Emerald & Cyan Ambient Glow */}
-          <div className="absolute -top-32 -left-32 w-80 h-80 bg-emerald-500/15 rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-cyan-500/15 rounded-full blur-[100px] pointer-events-none" />
-
-          {/* THE WATERMARK: Topographic Contour Elevation Vector Lines (extends outside card) */}
-          <svg
-            className="absolute -top-24 -right-24 w-[550px] h-[550px] opacity-[0.14] group-hover:opacity-[0.22] transition-opacity duration-700 pointer-events-none text-emerald-400 stroke-current"
-            viewBox="0 0 500 500"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M50 250C90 180 180 160 250 200C320 240 400 180 450 220"
-              strokeWidth="1.5"
-            />
-            <path
-              d="M30 280C80 200 190 190 270 230C350 270 410 210 470 250"
-              strokeWidth="1.5"
-            />
-            <path
-              d="M20 310C70 230 200 220 290 260C380 300 430 240 480 280"
-              strokeWidth="1.5"
-            />
-            <path
-              d="M10 340C60 260 210 250 310 290C410 330 450 270 490 310"
-              strokeWidth="1.5"
-            />
-            <path
-              d="M0 370C50 290 220 280 330 320C440 360 470 300 500 340"
-              strokeWidth="1.5"
-            />
-            <circle cx="250" cy="250" r="140" strokeWidth="1" strokeDasharray="4 4" />
-            <circle cx="250" cy="250" r="190" strokeWidth="1" strokeDasharray="6 6" />
-            <circle cx="250" cy="250" r="240" strokeWidth="1" strokeDasharray="8 8" />
-          </svg>
-
-          {/* Foreground Card Content */}
-          <div className="relative z-10 max-w-2xl mx-auto">
-            {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-emerald-500/40 text-emerald-400 text-xs font-semibold mb-6 shadow-xs">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>Strict 1 Hospital Per 10-KM Territory Policy</span>
-            </div>
-
-            {/* Headline */}
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-[1.1] mb-5">
-              Dominate your area in 30 days{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
-                or we work for free.
-              </span>
-            </h2>
-
-            {/* Subhead */}
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-8">
-              Make sure every single household, business, and patient within your hospital's 10-kilometer radius comes to you, not anyone else. Check territory availability before your competitor locks the rights.
-            </p>
-
-            {/* Feature Checklist */}
-            <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-5 text-xs text-slate-300 font-medium mb-9">
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Strict 10-km radius exclusivity
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Zero ad spend on billboards
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                1-tap WhatsApp consultation tokens
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                30-day performance guarantee
-              </span>
-            </div>
-
-            {/* CTA Button */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button
-                onClick={handleFinalCta}
-                className="w-full sm:w-auto px-9 py-4 rounded-full text-base font-extrabold text-slate-950 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-xl shadow-emerald-500/30 flex items-center justify-center gap-2.5 group cursor-pointer active:scale-95"
-              >
-                <MessageSquare className="w-4 h-4 fill-slate-950 text-slate-950" />
-                <span>Let's chat</span>
-                <ArrowRight className="w-4 h-4 text-slate-950 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-
-            <p className="text-[11px] text-slate-400 mt-5 font-mono">
-              Fast WhatsApp response in under 2 minutes · Confidential territory check
-            </p>
-          </div>
+        <div className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-[#0B0B0B] mb-4">
+          Strictly 1 Hospital Per 10-KM Territory
         </div>
+
+        <h2 className="font-display font-black uppercase text-[#D81919] tracking-[-0.03em] leading-[1.06] text-[clamp(1.85rem,4.6vw,3.6rem)] mb-6">
+          Dominate your area in 30 days or we work for free.
+        </h2>
+
+        <p className="text-sm sm:text-base text-[#262626] leading-relaxed max-w-2xl mx-auto mb-8">
+          Make sure every single household, business, and patient within your hospital's 10-kilometer radius comes to you, not anyone else. Check territory availability before a competing facility locks your zone.
+        </p>
+
+        {/* Quiet Editorial Proof Checklist */}
+        <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs sm:text-sm text-[#0B0B0B] font-semibold mb-9">
+          <span className="inline-flex items-center gap-1.5">
+            <CheckCircle2 className="w-4 h-4 text-[#D81919]" />
+            10-km radius exclusivity
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <CheckCircle2 className="w-4 h-4 text-[#D81919]" />
+            Zero billboard waste
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <CheckCircle2 className="w-4 h-4 text-[#D81919]" />
+            1-tap WhatsApp tokens
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <CheckCircle2 className="w-4 h-4 text-[#D81919]" />
+            30-day guarantee
+          </span>
+        </div>
+
+        <div className="flex justify-center">
+          <button
+            onClick={handleFinalCta}
+            className="w-full sm:w-auto px-10 py-4 text-sm sm:text-base font-display font-bold uppercase tracking-wide text-white bg-[#D81919] hover:bg-[#0B0B0B] transition-colors flex items-center justify-center gap-3 cursor-pointer active:scale-[0.98]"
+          >
+            <span>Let's chat</span>
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        <p className="text-xs text-neutral-600 mt-4 font-mono">
+          Confidential territory availability check · Fast WhatsApp response
+        </p>
+      </div>
+
+      {/* Page 14 Meadow Finale Stage: Pixel T-Rex + 4 Spotted Mushrooms on Curved Green Grass Hill */}
+      <div className="relative w-full mt-10 sm:mt-14 select-none pointer-events-none">
+        <div className="absolute left-[7%] sm:left-[9%] bottom-[24%] z-20">
+          <PixelMushroom className="w-10 h-10 sm:w-14 sm:h-14" />
+        </div>
+        <div className="absolute left-[18%] sm:left-[19%] bottom-[12%] z-20">
+          <PixelMushroom className="w-7 h-7 sm:w-10 sm:h-10" />
+        </div>
+        <div className="absolute left-[32%] sm:left-[34%] bottom-[22%] sm:bottom-[26%] z-20 animate-dino-subtle">
+          <PixelDino className="w-24 h-24 sm:w-36 sm:h-36 lg:w-44 lg:h-44 drop-shadow-[0_6px_0_rgba(0,0,0,0.14)]" />
+        </div>
+        <div className="absolute left-[63%] sm:left-[64%] bottom-[14%] z-20">
+          <PixelMushroom className="w-11 h-11 sm:w-16 sm:h-16" />
+        </div>
+        <div className="absolute right-[10%] sm:right-[12%] bottom-[26%] z-20">
+          <PixelMushroom className="w-10 h-10 sm:w-14 sm:h-14" />
+        </div>
+
+        <img
+          src="/assets/brand/meadow-hill.png"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-[130px] sm:h-[190px] lg:h-[235px] object-cover object-top block"
+          loading="eager"
+        />
       </div>
     </section>
   );

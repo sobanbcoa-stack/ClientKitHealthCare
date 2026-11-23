@@ -1,84 +1,79 @@
 import React from 'react';
-import { AlertCircle, MessageSquare, ArrowRight, XCircle } from 'lucide-react';
+import { ArrowRight, X } from 'lucide-react';
 import { PAIN_POINTS } from '../data/siteData';
 import { WHATSAPP_NUMBER_RAW, openWhatsApp } from '../utils/calculator';
+import { PixelHeartCluster } from './BrandArt';
 
 export const ProblemSection: React.FC = () => {
   const handleProblemCta = () => {
     openWhatsApp(
       WHATSAPP_NUMBER_RAW,
-      'Hi ClientKit! We are losing patients to competing clinics in our area. Let\'s chat about fixing our local acquisition.'
+      "Hi ClientKit! We are losing patients to competing clinics in our area. Let's chat about fixing our local acquisition."
     );
   };
 
   return (
     <section
       id="problem"
-      className="py-20 sm:py-28 bg-white relative border-b border-slate-200/80"
+      className="py-20 sm:py-28 bg-white border-t-2 border-[#0B0B0B]"
     >
-      {/* Background Subtle Grid & Crosshairs */}
-      <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
-      <div className="absolute top-6 left-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-      <div className="absolute top-6 right-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-      <div className="absolute bottom-6 left-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-      <div className="absolute bottom-6 right-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-700 text-xs font-semibold mb-3">
-            <AlertCircle className="w-3.5 h-3.5" />
-            <span>The Traditional Bottleneck</span>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-6 border-b-2 border-[#0B0B0B]">
+          <div className="max-w-2xl">
+            <div className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-[#D81919] mb-2.5">
+              The Traditional Bottleneck
+            </div>
+            <h2 className="font-display font-black uppercase text-[#D81919] tracking-[-0.03em] leading-[1.04] text-[clamp(1.75rem,4vw,3rem)]">
+              Why Hospitals Lose Patients To Competitors
+            </h2>
+            <p className="mt-3 text-sm sm:text-base text-[#262626]">
+              Most healthcare advertising drains cash because it speaks to an entire city instead of dominating the families right next door.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
-            Why Hospitals & Clinics Lose Patients To Competitors
-          </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600">
-            Most healthcare advertising wastes money because it speaks to everyone instead of dominating the families right next door.
-          </p>
+          <PixelHeartCluster size="sm" color="#0B0B0B" className="hidden md:block shrink-0" />
         </div>
 
-        {/* 5 Pain points cards in LeadArc clean grid */}
-        <div className="space-y-3.5 mb-10">
+        {/* Clean Editorial Numbered List (01–05) */}
+        <div className="divide-y-2 divide-[#0B0B0B] border-y-2 border-[#0B0B0B] mb-12">
           {PAIN_POINTS.map((item) => (
             <div
               key={item.num}
-              className="p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-slate-300 shadow-xs hover:shadow-md transition-all flex items-start sm:items-center gap-4"
+              className="py-6 sm:py-7 flex items-start sm:items-center gap-5 sm:gap-7 bg-white hover:bg-[#FAFAFA] transition-colors px-2 sm:px-4"
             >
-              <div className="w-9 h-9 rounded-xl bg-red-50 text-red-600 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-red-100">
-                {item.num}
+              <div className="font-display font-black text-2xl sm:text-3xl text-[#D81919] tabular-nums shrink-0 leading-none">
+                ({item.num})
               </div>
               <div className="flex-1 min-w-0">
-                <div className="text-sm font-bold text-slate-900 mb-0.5">
+                <h3 className="text-base sm:text-lg font-extrabold text-[#0B0B0B] mb-1">
                   {item.title}
-                </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                </h3>
+                <p className="text-sm text-[#404040] leading-relaxed">
                   {item.text}
                 </p>
               </div>
-              <XCircle className="w-5 h-5 text-red-400 shrink-0 hidden sm:block" />
+              <X className="w-5 h-5 text-[#D81919] shrink-0 hidden sm:block" />
             </div>
           ))}
         </div>
 
-        {/* Diagnosis Callout Card (LeadArc Sleek High-Contrast Frame) */}
-        <div className="p-7 sm:p-9 rounded-3xl bg-slate-950 text-white border border-slate-800 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        {/* High-Contrast Pitch-Black Diagnosis Callout */}
+        <div className="p-7 sm:p-10 bg-[#0B0B0B] text-white border-2 border-[#0B0B0B] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="max-w-xl">
-            <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-400 font-mono">
+            <div className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-[#FF4D4D] mb-2">
               The Simple Diagnosis
             </div>
-            <div className="text-lg sm:text-xl font-extrabold text-white mt-1 leading-snug">
-              You already have great doctors, surgical theaters, and equipment. Nearby families and businesses just don't know you yet.
+            <div className="font-display font-black uppercase text-lg sm:text-xl text-white leading-snug">
+              You already have great doctors, surgical theaters, and equipment. Nearby families just don't know you yet.
             </div>
-            <p className="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
-              We fix this with boots-on-the-ground corporate outreach, 10-km localized doctor videos, and instant WhatsApp booking.
+            <p className="text-xs sm:text-sm text-neutral-300 mt-2.5 leading-relaxed">
+              We fix this in 30 days with physical 10-km corporate outreach, localized doctor reels, and instant WhatsApp booking tokens.
             </p>
           </div>
 
           <button
             onClick={handleProblemCta}
-            className="px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 transition-all flex items-center gap-2 shrink-0 shadow-lg shadow-emerald-500/25 cursor-pointer active:scale-95"
+            className="px-7 py-4 text-xs sm:text-sm font-display font-bold uppercase tracking-wide text-white bg-[#D81919] hover:bg-[#B01212] transition-colors flex items-center gap-2.5 shrink-0 cursor-pointer active:scale-[0.98]"
           >
-            <MessageSquare className="w-4 h-4 fill-slate-950 text-slate-950" />
             <span>Let's chat</span>
             <ArrowRight className="w-4 h-4" />
           </button>

@@ -1,12 +1,10 @@
 import React from 'react';
 import {
-  Sparkles,
   Users,
   Smartphone,
   Video,
   HeartPulse,
   MessageSquare,
-  ArrowDown,
   ArrowRight,
 } from 'lucide-react';
 import { FUNNEL_STEPS } from '../data/siteData';
@@ -33,72 +31,67 @@ export const FunnelSection: React.FC = () => {
   const handleFunnelCta = () => {
     openWhatsApp(
       WHATSAPP_NUMBER_RAW,
-      'Hi ClientKit! I want to deploy the 5-step local patient acquisition funnel for our clinic. Let\'s chat about how to get started.'
+      "Hi ClientKit! I want to deploy the 5-step local patient acquisition funnel for our clinic. Let's chat about how to get started."
     );
   };
 
   return (
-    <section id="how-it-works" className="py-20 sm:py-28 bg-slate-50 relative border-b border-slate-200/80">
-      {/* LeadArc Background Grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none" />
-      <div className="absolute top-6 left-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-      <div className="absolute top-6 right-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-      <div className="absolute bottom-6 left-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-      <div className="absolute bottom-6 right-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-700 text-xs font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Turnkey Growth Process</span>
+    <section
+      id="how-it-works"
+      className="py-20 sm:py-28 bg-[#FAFAFA] border-t-2 border-[#0B0B0B]"
+    >
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="max-w-3xl mb-14">
+          <div className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-[#D81919] mb-2.5">
+            Turnkey 5-Stage Pipeline
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
+          <h2 className="font-display font-black uppercase text-[#D81919] tracking-[-0.03em] leading-[1.04] text-[clamp(1.75rem,4vw,3.1rem)]">
             How Patients Come To Your Hospital
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600">
-            A frictionless, 5-stage patient acquisition pipeline engineered specifically for high-intent medical consultations and surgical procedures.
+          <p className="mt-3 text-sm sm:text-base text-[#262626] leading-relaxed">
+            A frictionless, 5-stage acquisition pipeline engineered specifically for high-intent OPD consultations and surgical admissions inside your 10-kilometer zone.
           </p>
         </div>
 
-        <div className="flex flex-col items-center space-y-4 max-w-3xl mx-auto">
-          {FUNNEL_STEPS.map((step, idx) => {
+        <div className="space-y-5">
+          {FUNNEL_STEPS.map((step) => {
             const IconComponent = getIcon(step.icon);
 
             return (
-              <React.Fragment key={step.step}>
-                <div className="w-full transition-all p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 hover:border-emerald-500/50 shadow-xs hover:shadow-lg">
-                  <div className="flex items-start gap-4 sm:gap-5">
-                    <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                      <IconComponent className="w-6 h-6" />
+              <div
+                key={step.step}
+                className="p-6 sm:p-8 bg-white border-2 border-[#0B0B0B] hover:border-[#D81919] transition-colors"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-start gap-5">
+                  <div className="flex items-center justify-between sm:block shrink-0">
+                    <div className="font-display font-black text-3xl sm:text-4xl text-[#D81919] tabular-nums leading-none">
+                      (0{step.step})
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
-                          {step.badge}
-                        </span>
-                        <h3 className="text-base sm:text-lg font-extrabold text-slate-950">
-                          {step.title}
-                        </h3>
-                      </div>
-                      <div className="text-xs sm:text-sm text-emerald-700 font-semibold mb-2">
-                        {step.subtitle}
-                      </div>
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        {step.description}
-                      </p>
+                    <div className="sm:hidden text-[#0B0B0B]">
+                      <IconComponent className="w-5 h-5" />
                     </div>
-                    <div className="hidden sm:block text-slate-300 font-mono font-black text-2xl shrink-0">
-                      0{step.step}
+                  </div>
+
+                  <div className="flex-1 min-w-0">
+                    <div className="font-mono text-[11px] font-bold uppercase tracking-wider text-neutral-500 mb-1">
+                      {step.badge}
                     </div>
+                    <h3 className="text-lg sm:text-xl font-extrabold text-[#0B0B0B] mb-1.5">
+                      {step.title}
+                    </h3>
+                    <div className="text-sm font-bold text-[#D81919] mb-2">
+                      {step.subtitle}
+                    </div>
+                    <p className="text-sm text-[#333333] leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+
+                  <div className="hidden sm:flex w-11 h-11 border-2 border-[#0B0B0B] bg-[#FAFAFA] text-[#0B0B0B] items-center justify-center shrink-0">
+                    <IconComponent className="w-5 h-5" />
                   </div>
                 </div>
-
-                {idx < FUNNEL_STEPS.length - 1 && (
-                  <div className="py-0.5 text-slate-400">
-                    <ArrowDown className="w-4 h-4 opacity-70 animate-bounce" />
-                  </div>
-                )}
-              </React.Fragment>
+              </div>
             );
           })}
         </div>
@@ -106,9 +99,8 @@ export const FunnelSection: React.FC = () => {
         <div className="mt-12 text-center">
           <button
             onClick={handleFunnelCta}
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold text-white bg-slate-950 hover:bg-slate-800 transition-all shadow-md shadow-slate-950/15 cursor-pointer active:scale-95"
+            className="inline-flex items-center gap-3 px-8 py-4 text-sm font-display font-bold uppercase tracking-wide text-white bg-[#0B0B0B] hover:bg-[#D81919] transition-colors cursor-pointer active:scale-[0.98]"
           >
-            <MessageSquare className="w-4 h-4 text-emerald-400 fill-emerald-400" />
             <span>Let's chat</span>
             <ArrowRight className="w-4 h-4" />
           </button>

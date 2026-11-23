@@ -6,10 +6,11 @@
 import React, { useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { ProblemSection } from './components/ProblemSection';
-import { FunnelSection } from './components/FunnelSection';
-import { PillarsSection } from './components/PillarsSection';
+import { ResultsNumbersSection } from './components/ResultsNumbersSection';
 import { ClinicsSection } from './components/ClinicsSection';
+import { ProblemSection } from './components/ProblemSection';
+import { PillarsSection } from './components/PillarsSection';
+import { FunnelSection } from './components/FunnelSection';
 import { ComparisonSection } from './components/ComparisonSection';
 import { CalculatorSection } from './components/CalculatorSection';
 import { FaqSection } from './components/FaqSection';
@@ -32,7 +33,7 @@ export default function App() {
   useEffect(() => {
     if (route.type === 'home') {
       updateHeadTags({
-        title: 'ClientKit - Dominate Your Area In 30 Days Or We Work For Free',
+        title: 'ClientKit - Dominate Your Area In 90 Days Or We Work For Free',
         description:
           'ClientKit is the patient acquisition engine for Pakistani hospitals and clinics. Strictly 1 partner per 10km area. In-person ground game, medical telemarketing, and doctor video content.',
         schema: {
@@ -89,11 +90,15 @@ export default function App() {
       default:
         return (
           <main>
+            {/* 1. Hero Banner (Meadow Hill + Pixel T-Rex + Crisp Display) */}
             <Hero />
-            <ProblemSection />
-            <FunnelSection />
-            <PillarsSection />
+            {/* 2. Immediate Proven Hospital Results Right After the Banner, Followed by Numbers */}
             <ClinicsSection />
+            <ResultsNumbersSection />
+            {/* 3. Problem, System Pillars, Funnel, Comparison, Calculator, FAQ & Finale */}
+            <ProblemSection />
+            <PillarsSection />
+            <FunnelSection />
             <ComparisonSection />
             <CalculatorSection />
             <FaqSection />
@@ -104,7 +109,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-emerald-500 selection:text-slate-950 font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-[#FAFAFA] text-[#111111] selection:bg-[#D81919] selection:text-white font-sans antialiased overflow-x-hidden">
       <Header />
       {renderContent()}
       <Footer />

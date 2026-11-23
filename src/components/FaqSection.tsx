@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, MessageSquare, ArrowRight, HelpCircle } from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 import { FAQ_ITEMS } from '../data/siteData';
 import { WHATSAPP_NUMBER_RAW, openWhatsApp } from '../utils/calculator';
 
@@ -20,73 +20,68 @@ export const FaqSection: React.FC = () => {
   const handleCustomQuestion = () => {
     openWhatsApp(
       WHATSAPP_NUMBER_RAW,
-      'Hi ClientKit! I have a specific question about dominating our hospital / clinic area. Let\'s chat.'
+      "Hi ClientKit! I have a specific question about dominating our hospital / clinic area. Let's chat."
     );
   };
 
   return (
-    <section id="faq" className="py-20 sm:py-28 bg-white relative border-b border-slate-200/80">
-      {/* Background Subtle Grid & Crosshairs */}
-      <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
-      <div className="absolute top-6 left-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-      <div className="absolute top-6 right-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-      <div className="absolute bottom-6 left-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-      <div className="absolute bottom-6 right-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-700 text-xs font-semibold mb-3">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>Clarity & Terms</span>
+    <section id="faq" className="py-20 sm:py-28 bg-white border-t-2 border-[#0B0B0B]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="mb-12">
+          <div className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-[#D81919] mb-2.5">
+            Clarity &amp; Terms
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
+          <h2 className="font-display font-black uppercase text-[#D81919] tracking-[-0.03em] leading-[1.04] text-[clamp(1.75rem,4vw,3rem)]">
             Frequently Asked Questions
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600">
-            Clear, transparent answers to questions hospital directors, chief operating officers, and senior doctors ask us.
+          <p className="mt-3 text-sm sm:text-base text-[#262626]">
+            Direct, transparent answers to questions hospital directors, COOs, and senior consultants ask us.
           </p>
         </div>
 
-        {/* LeadArc Accordion Style */}
-        <div className="space-y-3.5 max-w-3xl mx-auto">
+        <div className="divide-y-2 divide-[#0B0B0B] border-y-2 border-[#0B0B0B]">
           {FAQ_ITEMS.map((item, index) => {
             const isOpen = openIndex === index;
 
             return (
-              <div
-                key={index}
-                className="rounded-2xl border border-slate-200/90 bg-white overflow-hidden shadow-xs hover:border-slate-300 transition-all"
-              >
+              <div key={index} className="bg-white">
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 hover:bg-slate-50 transition-colors cursor-pointer"
+                  className="w-full py-5 sm:py-6 px-2 sm:px-3 text-left flex items-center justify-between gap-4 hover:bg-[#FAFAFA] transition-colors cursor-pointer"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-sm sm:text-base font-bold text-slate-900">
-                    {item.question}
-                  </span>
+                  <div className="flex items-baseline gap-3.5 min-w-0">
+                    <span className="font-display font-black text-sm sm:text-base text-[#D81919] tabular-nums shrink-0">
+                      (0{index + 1})
+                    </span>
+                    <span className="text-sm sm:text-base font-extrabold text-[#0B0B0B]">
+                      {item.question}
+                    </span>
+                  </div>
                   <div
-                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border transition-all ${
+                    className={`w-8 h-8 flex items-center justify-center shrink-0 border-2 transition-colors ${
                       isOpen
-                        ? 'bg-slate-950 text-white border-slate-950'
-                        : 'bg-slate-100 text-slate-600 border-slate-200'
+                        ? 'bg-[#D81919] text-white border-[#D81919]'
+                        : 'bg-white text-[#0B0B0B] border-[#0B0B0B]'
                     }`}
                   >
                     <ChevronDown
-                      className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                      className={`w-4 h-4 transition-transform ${
+                        isOpen ? 'rotate-180' : ''
+                      }`}
                     />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/50">
+                  <div className="px-2 sm:px-3 pb-6 pt-1 pl-10 sm:pl-14 text-sm text-[#333333] leading-relaxed">
                     <p>{item.answer}</p>
                     <button
                       onClick={() => handleAskFaqOnWhatsApp(item.question)}
-                      className="mt-3.5 text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1.5 cursor-pointer"
+                      className="mt-3.5 text-xs font-display font-bold uppercase tracking-wide text-[#D81919] hover:text-[#0B0B0B] inline-flex items-center gap-1.5 cursor-pointer"
                     >
-                      <MessageSquare className="w-3.5 h-3.5 text-emerald-600" />
-                      <span>Have follow-up questions? Let's chat →</span>
+                      <span>Ask a follow-up question</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
                 )}
@@ -95,18 +90,16 @@ export const FaqSection: React.FC = () => {
           })}
         </div>
 
-        {/* Bottom Help Callout */}
-        <div className="mt-10 p-5 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-between gap-4 text-center sm:text-left flex-wrap sm:flex-nowrap max-w-3xl mx-auto">
-          <span className="text-xs sm:text-sm text-slate-700 font-medium">
-            Have a unique facility requirement or territory question?
+        <div className="mt-10 p-6 bg-[#FAFAFA] border-2 border-[#0B0B0B] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <span className="text-sm text-[#0B0B0B] font-bold">
+            Have a specific facility requirement or 10-km territory question?
           </span>
           <button
             onClick={handleCustomQuestion}
-            className="px-5 py-2.5 rounded-full text-xs font-bold text-white bg-slate-950 hover:bg-slate-800 transition-all flex items-center gap-1.5 shrink-0 shadow-xs cursor-pointer active:scale-95"
+            className="px-6 py-3 text-xs sm:text-sm font-display font-bold uppercase tracking-wide text-white bg-[#0B0B0B] hover:bg-[#D81919] transition-colors flex items-center gap-2 shrink-0 cursor-pointer active:scale-[0.98]"
           >
-            <MessageSquare className="w-3.5 h-3.5 text-emerald-400 fill-emerald-400" />
             <span>Let's chat</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-4 h-4" />
           </button>
         </div>
       </div>

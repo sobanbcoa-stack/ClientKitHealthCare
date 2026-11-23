@@ -1,114 +1,118 @@
 import React, { useState } from 'react';
-import {
-  Building2,
-  MapPin,
-  TrendingUp,
-  Eye,
-  CheckCircle2,
-} from 'lucide-react';
+import { MapPin, Eye, CheckCircle2 } from 'lucide-react';
 import { CLINIC_FACILITIES } from '../data/siteData';
+import { PixelHeartCluster, RedMarkerCircle } from './BrandArt';
 
 export const ClinicsSection: React.FC = () => {
   const [activeHospitalId, setActiveHospitalId] = useState<string | null>(null);
 
   return (
-    <section id="facilities" className="py-20 sm:py-28 bg-slate-50 relative border-b border-slate-200/80">
-      {/* LeadArc Style Grid Lines & Crosshairs */}
-      <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none" />
-      <div className="absolute top-6 left-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-      <div className="absolute top-6 right-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-      <div className="absolute bottom-6 left-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-      <div className="absolute bottom-6 right-6 text-slate-300 font-mono text-xs select-none hidden lg:block">+</div>
-
+    <section
+      id="results"
+      className="py-20 sm:py-28 bg-[#FAFAFA] relative border-t-2 border-[#0B0B0B]"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 text-xs font-semibold mb-3">
-            <TrendingUp className="w-3.5 h-3.5" />
-            <span>Proven Track Record</span>
+        {/* Editorial Section Header (Echoing Pages 3–6 of the PDF) */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 pb-8 border-b-2 border-[#0B0B0B]">
+          <div className="max-w-3xl">
+            <div className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-[#D81919] mb-3">
+              Verified 30-Day Proof · Karachi & Lahore
+            </div>
+            <h2 className="font-display font-black uppercase text-[#D81919] tracking-[-0.03em] leading-[1.02] text-[clamp(1.9rem,4.5vw,3.5rem)]">
+              PROVEN HOSPITAL RESULTS
+            </h2>
+            <p className="mt-4 text-sm sm:text-base text-[#262626] leading-relaxed max-w-2xl">
+              Hover over any real partner hospital below to inspect the exact OPD consultations, surgical bookings, and 30-day revenue generated inside their 10-kilometer territory.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
-            We know what we're doing.
-          </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-            Hover over any hospital facility below to inspect the verified patient consultation numbers, surgical inquiries, and business growth generated in their first 30 days.
-          </p>
+
+          <div className="flex items-center gap-5 shrink-0">
+            <PixelHeartCluster size="sm" color="#D81919" className="hidden sm:block" />
+            <div className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-[#D81919] leading-none tabular-nums">
+              (06)
+            </div>
+          </div>
         </div>
 
-        {/* 6 Real Hospital Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {CLINIC_FACILITIES.map((facility) => {
+        {/* 6 Real Hospital Editorial Frames (Sharp 2px black gallery frames like PDF Pages 4, 5, 6, 12, 13) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+          {CLINIC_FACILITIES.map((facility, idx) => {
             const isHovered = activeHospitalId === facility.id;
+            const heroStat = facility.resultMetricPills[0];
 
             return (
-              <div
+              <article
                 key={facility.id}
                 onMouseEnter={() => setActiveHospitalId(facility.id)}
                 onMouseLeave={() => setActiveHospitalId(null)}
-                className="group relative rounded-2xl overflow-hidden bg-white border border-slate-200/90 hover:border-slate-400/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                onClick={() =>
+                  setActiveHospitalId(isHovered ? null : facility.id)
+                }
+                className="group relative bg-white border-2 border-[#0B0B0B] hover:border-[#D81919] transition-colors duration-200 flex flex-col justify-between cursor-pointer"
               >
-                {/* Image Container with Real Hospital Facade / Facility Photography */}
-                <div className="relative h-64 sm:h-72 overflow-hidden bg-slate-900">
+                {/* Real Hospital Photography Container */}
+                <div className="relative h-60 sm:h-64 overflow-hidden bg-[#0B0B0B] border-b-2 border-[#0B0B0B]">
                   <img
                     src={facility.imageUrl}
                     alt={facility.hospitalName}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-95"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                     onError={(e) => {
-                      // Fallback in case of external network blip
-                      (e.target as HTMLImageElement).src = '/assets/aistudio/image_487690e8.png';
+                      (e.target as HTMLImageElement).src =
+                        '/assets/aistudio/image_487690e8.png';
                     }}
                   />
 
-                  {/* Gradient Scrim */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 pointer-events-none" />
+                  {/* Subtle Bottom Scrim for Legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/15 pointer-events-none" />
 
-                  {/* Specialty Tag Top Left */}
-                  <div className="absolute top-3 left-3 z-10">
-                    <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-white/90 backdrop-blur-md text-slate-900 shadow-xs border border-white/40">
-                      {facility.specialty}
-                    </span>
+                  {/* Quiet Editorial Index Top Left */}
+                  <div className="absolute top-3 left-3 z-10 bg-[#0B0B0B] text-white font-display font-bold text-[11px] px-2.5 py-1 tabular-nums">
+                    0{idx + 1}
                   </div>
 
-                  {/* Hover Prompt Chip (Bottom of image on default state) */}
+                  {/* Subtle Hover Prompt Bottom Right */}
                   <div className="absolute bottom-3 right-3 z-10 group-hover:opacity-0 transition-opacity">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-900/80 backdrop-blur-md text-emerald-400 border border-emerald-500/30">
-                      <Eye className="w-3 h-3" />
-                      <span>Hover for 30-Day Results</span>
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-bold bg-[#FAFAFA] text-[#0B0B0B] border border-[#0B0B0B]">
+                      <Eye className="w-3.5 h-3.5 text-[#D81919]" />
+                      <span>Hover for Numbers</span>
                     </span>
                   </div>
 
-                  {/* THE HOVER OVERLAY: Pure Numerical Overview (No lengthy paragraphs) */}
+                  {/* PURE NUMERICAL HOVER OVERLAY (No paragraphs, no per-card chat CTA) */}
                   <div
-                    className={`absolute inset-0 z-20 bg-slate-950/95 backdrop-blur-md p-5 text-white flex flex-col justify-center transition-all duration-300 ${
+                    className={`absolute inset-0 z-20 bg-[#0B0B0B]/95 p-5 text-white flex flex-col justify-center transition-all duration-200 ${
                       isHovered
                         ? 'opacity-100 translate-y-0 pointer-events-auto'
                         : 'opacity-0 translate-y-2 pointer-events-none'
                     }`}
                   >
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                    <div className="flex items-center justify-between text-[11px] font-mono uppercase tracking-wider text-neutral-300 mb-3 pb-2 border-b border-white/15">
+                      <span className="text-[#FF4D4D] font-bold">
                         {facility.daysToResult}
                       </span>
-                      <span className="text-[10px] font-mono text-emerald-400 font-bold flex items-center gap-1">
-                        <CheckCircle2 className="w-3 h-3" /> Target Delivered
+                      <span className="inline-flex items-center gap-1 text-white font-semibold">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#D81919]" />
+                        Delivered
                       </span>
                     </div>
 
-                    <div className="text-base sm:text-lg font-black text-white leading-tight font-sans tracking-tight mb-4">
+                    <div className="font-display font-black uppercase text-sm sm:text-base text-white leading-snug mb-4">
                       {facility.resultHeadline}
                     </div>
 
-                    {/* 3 Prominent Metric Stat Blocks */}
+                    {/* 3 Prominent Tabular Metric Blocks */}
                     <div className="grid grid-cols-3 gap-2">
                       {facility.resultMetricPills.map((pill, i) => (
                         <div
                           key={i}
-                          className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-center flex flex-col justify-center items-center"
+                          className="p-2.5 bg-white/5 border border-white/15 text-center flex flex-col justify-center items-center"
                         >
-                          <div className="text-base sm:text-lg font-black text-emerald-400 font-mono tracking-tight">
+                          <div className="text-sm sm:text-base font-display font-black text-[#FF4D4D] tabular-nums leading-none">
                             {pill.value}
                           </div>
-                          <div className="text-[9px] sm:text-[10px] text-slate-300 font-medium uppercase tracking-wider mt-1 leading-tight text-center">
+                          <div className="text-[9px] sm:text-[10px] text-neutral-300 font-semibold uppercase tracking-wide mt-1.5 leading-tight">
                             {pill.label}
                           </div>
                         </div>
@@ -117,50 +121,56 @@ export const ClinicsSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Card Bottom Meta (No "Let's chat" button as requested) */}
+                {/* Editorial Card Footer with Hand-Drawn Red Marker Highlight */}
                 <div className="p-5 flex-1 flex flex-col justify-between bg-white">
                   <div>
-                    <h3 className="text-base font-bold text-slate-950 leading-snug group-hover:text-emerald-700 transition-colors">
+                    <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-neutral-500 mb-1.5">
+                      {facility.specialty}
+                    </div>
+                    <h3 className="text-base sm:text-lg font-extrabold text-[#0B0B0B] leading-snug group-hover:text-[#D81919] transition-colors">
                       {facility.hospitalName}
                     </h3>
-                    <div className="flex items-center gap-1.5 text-xs text-slate-500 mt-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                    <div className="flex items-center gap-1.5 text-xs text-neutral-600 mt-1.5">
+                      <MapPin className="w-3.5 h-3.5 text-[#D81919] shrink-0" />
                       <span className="truncate">{facility.location}</span>
                     </div>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-xs font-bold text-emerald-700 font-mono">
-                      {facility.resultMetricPills[0]?.value} {facility.resultMetricPills[0]?.label}
-                    </span>
-                    <span className="text-[11px] font-semibold text-slate-400 font-mono">
-                      {facility.daysToResult}
+                  {/* Highlighted Hero Stat Row with Hand-Drawn Crimson Circle (Pages 4–6 motif) */}
+                  <div className="mt-5 pt-4 border-t border-black/10 flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <div className="relative inline-flex items-center justify-center px-3.5 py-1.5 shrink-0">
+                        <RedMarkerCircle className="absolute -inset-x-2 -inset-y-1 w-[calc(100%+16px)] h-[calc(100%+8px)]" />
+                        <span className="relative font-display font-black text-sm text-[#D81919] tabular-nums whitespace-nowrap">
+                          {heroStat?.value}
+                        </span>
+                      </div>
+                      <span className="font-bold text-xs text-[#0B0B0B] truncate">
+                        {heroStat?.label}
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-mono font-bold uppercase text-neutral-500 shrink-0">
+                      30 Days
                     </span>
                   </div>
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>
 
-        {/* Territory Callout Bar */}
-        <div className="mt-12 p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
-              <Building2 className="w-5 h-5" />
+        {/* Clean Territory Protection Footnote Bar */}
+        <div className="mt-12 p-6 sm:p-7 bg-white border-2 border-[#0B0B0B] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <div className="font-display font-black uppercase text-sm sm:text-base text-[#D81919]">
+              10-Kilometer Exclusivity Agreement
             </div>
-            <div>
-              <div className="text-sm font-bold text-slate-900">
-                10-Kilometer Exclusivity Agreement
-              </div>
-              <div className="text-xs text-slate-500">
-                We partner with strictly ONE hospital per territory. Your local competitors are locked out once reserved.
-              </div>
-            </div>
+            <p className="text-xs sm:text-sm text-[#262626] mt-1">
+              We partner with strictly ONE hospital per territory. Your nearby competitors are permanently locked out once your zone is reserved.
+            </p>
           </div>
-
-          <div className="text-xs font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-full shrink-0">
-            30-Day Territory Protection Guaranteed
+          <div className="font-mono text-xs font-bold uppercase tracking-wider text-[#0B0B0B] shrink-0 border-b-2 border-[#D81919] pb-1">
+            30-Day Territory Protection
           </div>
         </div>
       </div>

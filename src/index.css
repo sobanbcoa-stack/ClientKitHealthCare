@@ -1,21 +1,65 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Unbounded', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --color-crimson: #D81919;
+  --color-crimson-dark: #B01212;
+  --color-paper: #FAFAFA;
+  --color-ink: #0B0B0B;
+}
+
+@layer base {
+  html {
+    background-color: #FAFAFA;
+    color: #111111;
+  }
+
+  h1, h2 {
+    text-wrap: balance;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.pixel-crisp {
+  shape-rendering: crispEdges;
+  image-rendering: pixelated;
+}
+
+@keyframes dinoFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-dino-subtle {
+  animation: dinoFloat 3.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-dino-subtle {
+    animation: none;
+  }
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #070a10;
+  background: #F4F4F4;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 3px;
+  background: #D81919;
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #10b981;
+  background: #A81212;
 }
