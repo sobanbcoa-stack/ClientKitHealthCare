@@ -6,7 +6,7 @@ export const MobileStickyBar: React.FC = () => {
   const handleMobileCta = () => {
     openWhatsApp(
       WHATSAPP_NUMBER_RAW,
-      "Hi ClientKit! I am on mobile reviewing your 30-day territory takeover engine for our clinic. Let's chat."
+      "Hi ClientKit! I am on mobile reviewing your 90-day territory takeover engine for our clinic. Let's chat."
     );
   };
 
@@ -15,10 +15,10 @@ export const MobileStickyBar: React.FC = () => {
       <div className="flex items-center justify-between gap-3 max-w-md mx-auto">
         <div className="min-w-0">
           <div className="font-display font-bold text-[11px] uppercase text-white truncate">
-            1 Hospital Per 10-KM
+            1 Clinic Per 10-KM
           </div>
           <div className="text-[10px] text-neutral-400 truncate font-mono">
-            30-Day Performance Guarantee
+            90-Day Performance Guarantee
           </div>
         </div>
 

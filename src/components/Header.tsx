@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleLetsChat = (source: string) => {
-    const msg = `Hi ClientKit! I run a hospital / clinic. I want to check territory exclusivity for our 10-km area (${source}).`;
+    const msg = `Hi ClientKit! I run an aesthetic clinic, dental practice, or hospital. I want to check territory exclusivity for our 10-km area (${source}).`;
     openWhatsApp(WHATSAPP_NUMBER_RAW, msg);
   };
 
@@ -24,6 +24,11 @@ export const Header: React.FC = () => {
     }
   };
 
+  const go = (path: string) => {
+    setMobileMenuOpen(false);
+    navigateTo(path);
+  };
+
   return (
     <>
       {/* Non-sticky Territory Exclusivity Ribbon so mobile sticky chrome stays under 15% */}
@@ -34,7 +39,7 @@ export const Header: React.FC = () => {
           </span>
           <span className="hidden sm:inline text-neutral-500" aria-hidden="true">/</span>
           <span className="text-white font-semibold">
-            Strictly <span className="underline decoration-[#D81919] decoration-2 underline-offset-4 font-bold">ONE</span> Hospital or Clinic Per 10-KM Area
+            Strictly <span className="underline decoration-[#D81919] decoration-2 underline-offset-4 font-bold">ONE</span> Aesthetic or Dental Clinic Per 10-KM Area
           </span>
           <span className="hidden md:inline text-neutral-400">
             · First Come, First Reserved
@@ -47,14 +52,14 @@ export const Header: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-8">
           {/* Zone 1: Single-line Brand Wordmark */}
           <button
-            onClick={() => navigateTo('/')}
+            onClick={() => go('/')}
             className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D81919] rounded cursor-pointer whitespace-nowrap shrink-0"
             aria-label="ClientKit Home"
           >
             <Logo size="md" theme="dark" showTagline={false} />
           </button>
 
-          {/* Zone 2: 5 concise single-line text nav links */}
+          {/* Zone 2: 5 concise single-line text nav links (Directory & 12 Guides removed) */}
           <nav className="hidden lg:flex items-center gap-7 text-sm font-semibold text-[#1A1A1A]">
             <button
               onClick={() => handleAnchor('results')}
@@ -69,22 +74,22 @@ export const Header: React.FC = () => {
               The System
             </button>
             <button
-              onClick={() => handleAnchor('calculator')}
+              onClick={() => go('/aesthetic-clinics')}
               className="hover:text-[#D81919] transition-colors cursor-pointer whitespace-nowrap shrink-0"
             >
-              Calculator
+              Aesthetic
             </button>
             <button
-              onClick={() => navigateTo('/blog')}
+              onClick={() => go('/dental-clinics')}
               className="hover:text-[#D81919] transition-colors cursor-pointer whitespace-nowrap shrink-0"
             >
-              12 Guides
+              Dental
             </button>
             <button
-              onClick={() => navigateTo('/directory')}
+              onClick={() => go('/portfolio')}
               className="hover:text-[#D81919] transition-colors cursor-pointer whitespace-nowrap shrink-0"
             >
-              Directory
+              Portfolio
             </button>
           </nav>
 
@@ -112,74 +117,65 @@ export const Header: React.FC = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden bg-[#FAFAFA] border-b-2 border-[#0B0B0B] px-5 py-5 space-y-1 text-sm font-bold text-[#111111] shadow-xl max-h-[80vh] overflow-y-auto">
             <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                navigateTo('/');
-              }}
-              className="block w-full text-left py-2.5 border-b border-black/10 hover:text-[#D81919]"
+              onClick={() => go('/')}
+              className="block w-full text-left py-2.5 border-b border-black/10 hover:text-[#D81919] cursor-pointer"
             >
               Home
             </button>
             <button
               onClick={() => handleAnchor('results')}
-              className="block w-full text-left py-2.5 border-b border-black/10 hover:text-[#D81919]"
+              className="block w-full text-left py-2.5 border-b border-black/10 hover:text-[#D81919] cursor-pointer"
             >
-              30-Day Results
+              Results
             </button>
             <button
               onClick={() => handleAnchor('pillars')}
-              className="block w-full text-left py-2.5 border-b border-black/10 hover:text-[#D81919]"
+              className="block w-full text-left py-2.5 border-b border-black/10 hover:text-[#D81919] cursor-pointer"
             >
               The System
             </button>
             <button
-              onClick={() => handleAnchor('calculator')}
-              className="block w-full text-left py-2.5 border-b border-black/10 hover:text-[#D81919]"
+              onClick={() => go('/aesthetic-clinics')}
+              className="block w-full text-left py-2.5 border-b border-black/10 hover:text-[#D81919] cursor-pointer"
             >
-              PKR Calculator
+              Aesthetic Clinics
             </button>
             <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                navigateTo('/specialties/dental-clinic-marketing-agency-pakistan');
-              }}
-              className="block w-full text-left py-2.5 border-b border-black/10 hover:text-[#D81919]"
+              onClick={() => go('/dental-clinics')}
+              className="block w-full text-left py-2.5 border-b border-black/10 hover:text-[#D81919] cursor-pointer"
             >
-              8 Specialties
+              Dental Clinics
             </button>
             <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                navigateTo('/blog');
-              }}
-              className="block w-full text-left py-2.5 border-b border-black/10 text-[#D81919]"
+              onClick={() => go('/portfolio')}
+              className="block w-full text-left py-2.5 border-b border-black/10 text-[#D81919] cursor-pointer"
             >
-              12 Healthcare Guides
+              All Portfolio Case Studies
             </button>
             <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                navigateTo('/directory');
-              }}
-              className="block w-full text-left py-2.5 border-b border-black/10 hover:text-[#D81919]"
+              onClick={() => go('/portfolio/aesthetic')}
+              className="block w-full text-left py-2.5 pl-4 border-b border-black/10 text-xs text-neutral-700 hover:text-[#D81919] cursor-pointer"
             >
-              Agency Matrix
+              — Aesthetic Portfolio
             </button>
             <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                navigateTo('/sitemap');
-              }}
-              className="block w-full text-left py-2.5 text-xs font-mono text-neutral-600 hover:text-[#D81919]"
+              onClick={() => go('/portfolio/dental')}
+              className="block w-full text-left py-2.5 pl-4 border-b border-black/10 text-xs text-neutral-700 hover:text-[#D81919] cursor-pointer"
             >
-              Master Sitemap (228 URLs)
+              — Dental Portfolio
+            </button>
+            <button
+              onClick={() => go('/hospitals')}
+              className="block w-full text-left py-2.5 border-b border-black/10 hover:text-[#D81919] cursor-pointer"
+            >
+              Proven Hospital Results
             </button>
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 handleLetsChat('Mobile Menu CTA');
               }}
-              className="w-full mt-3 py-3.5 px-4 bg-[#D81919] text-white font-bold flex items-center justify-center gap-2"
+              className="w-full mt-3 py-3.5 px-4 bg-[#D81919] text-white font-bold flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>Let's chat</span>
               <ArrowRight className="w-4 h-4" />

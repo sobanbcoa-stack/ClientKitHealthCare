@@ -1,28 +1,35 @@
 import React, { useState } from 'react';
-import { MapPin, Eye, CheckCircle2 } from 'lucide-react';
+import { MapPin, Eye, CheckCircle2, ArrowRight } from 'lucide-react';
 import { CLINIC_FACILITIES } from '../data/siteData';
+import { navigateTo } from '../utils/router';
 import { PixelHeartCluster, RedMarkerCircle } from './BrandArt';
 
-export const ClinicsSection: React.FC = () => {
+interface ClinicsSectionProps {
+  showAllPageLink?: boolean;
+}
+
+export const ClinicsSection: React.FC<ClinicsSectionProps> = ({
+  showAllPageLink = true,
+}) => {
   const [activeHospitalId, setActiveHospitalId] = useState<string | null>(null);
 
   return (
     <section
-      id="results"
+      id="hospitals"
       className="py-20 sm:py-28 bg-[#FAFAFA] relative border-t-2 border-[#0B0B0B]"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* Editorial Section Header (Echoing Pages 3–6 of the PDF) */}
+        {/* Editorial Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 pb-8 border-b-2 border-[#0B0B0B]">
           <div className="max-w-3xl">
             <div className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-[#D81919] mb-3">
-              Verified 30-Day Proof · Karachi & Lahore
+              Combined Proof · Enterprise Tertiary &amp; Multi-Specialty Hospitals
             </div>
             <h2 className="font-display font-black uppercase text-[#D81919] tracking-[-0.03em] leading-[1.02] text-[clamp(1.9rem,4.5vw,3.5rem)]">
               PROVEN HOSPITAL RESULTS
             </h2>
             <p className="mt-4 text-sm sm:text-base text-[#262626] leading-relaxed max-w-2xl">
-              Hover over any real partner hospital below to inspect the exact OPD consultations, surgical bookings, and 30-day revenue generated inside their 10-kilometer territory.
+              Alongside our aesthetic and dental clinic partners, inspect verified OPD consultations, surgical bookings, and territory results delivered across 6 premier hospitals in Karachi &amp; Lahore.
             </p>
           </div>
 
@@ -34,7 +41,7 @@ export const ClinicsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* 6 Real Hospital Editorial Frames (Sharp 2px black gallery frames like PDF Pages 4, 5, 6, 12, 13) */}
+        {/* 6 Real Hospital Editorial Frames */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
           {CLINIC_FACILITIES.map((facility, idx) => {
             const isHovered = activeHospitalId === facility.id;
@@ -64,15 +71,12 @@ export const ClinicsSection: React.FC = () => {
                     }}
                   />
 
-                  {/* Subtle Bottom Scrim for Legibility */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/15 pointer-events-none" />
 
-                  {/* Quiet Editorial Index Top Left */}
                   <div className="absolute top-3 left-3 z-10 bg-[#0B0B0B] text-white font-display font-bold text-[11px] px-2.5 py-1 tabular-nums">
                     0{idx + 1}
                   </div>
 
-                  {/* Subtle Hover Prompt Bottom Right */}
                   <div className="absolute bottom-3 right-3 z-10 group-hover:opacity-0 transition-opacity">
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-bold bg-[#FAFAFA] text-[#0B0B0B] border border-[#0B0B0B]">
                       <Eye className="w-3.5 h-3.5 text-[#D81919]" />
@@ -80,7 +84,7 @@ export const ClinicsSection: React.FC = () => {
                     </span>
                   </div>
 
-                  {/* PURE NUMERICAL HOVER OVERLAY (No paragraphs, no per-card chat CTA) */}
+                  {/* PURE NUMERICAL HOVER OVERLAY */}
                   <div
                     className={`absolute inset-0 z-20 bg-[#0B0B0B]/95 p-5 text-white flex flex-col justify-center transition-all duration-200 ${
                       isHovered
@@ -102,7 +106,6 @@ export const ClinicsSection: React.FC = () => {
                       {facility.resultHeadline}
                     </div>
 
-                    {/* 3 Prominent Tabular Metric Blocks */}
                     <div className="grid grid-cols-3 gap-2">
                       {facility.resultMetricPills.map((pill, i) => (
                         <div
@@ -136,7 +139,6 @@ export const ClinicsSection: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Highlighted Hero Stat Row with Hand-Drawn Crimson Circle (Pages 4–6 motif) */}
                   <div className="mt-5 pt-4 border-t border-black/10 flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2.5 min-w-0">
                       <div className="relative inline-flex items-center justify-center px-3.5 py-1.5 shrink-0">
@@ -150,7 +152,7 @@ export const ClinicsSection: React.FC = () => {
                       </span>
                     </div>
                     <span className="text-[10px] font-mono font-bold uppercase text-neutral-500 shrink-0">
-                      30 Days
+                      Hospital
                     </span>
                   </div>
                 </div>
@@ -159,19 +161,29 @@ export const ClinicsSection: React.FC = () => {
           })}
         </div>
 
-        {/* Clean Territory Protection Footnote Bar */}
+        {/* Clean Territory Protection & Hospitals Page Link Bar */}
         <div className="mt-12 p-6 sm:p-7 bg-white border-2 border-[#0B0B0B] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <div className="font-display font-black uppercase text-sm sm:text-base text-[#D81919]">
               10-Kilometer Exclusivity Agreement
             </div>
             <p className="text-xs sm:text-sm text-[#262626] mt-1">
-              We partner with strictly ONE hospital per territory. Your nearby competitors are permanently locked out once your zone is reserved.
+              Strictly ONE partner hospital or clinic per territory. Nearby competitors are locked out once your zone is reserved.
             </p>
           </div>
-          <div className="font-mono text-xs font-bold uppercase tracking-wider text-[#0B0B0B] shrink-0 border-b-2 border-[#D81919] pb-1">
-            30-Day Territory Protection
-          </div>
+          {showAllPageLink ? (
+            <button
+              onClick={() => navigateTo('/hospitals')}
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0B0B0B] hover:bg-[#D81919] text-white text-xs font-display font-bold uppercase tracking-wide transition-colors cursor-pointer shrink-0 whitespace-nowrap"
+            >
+              <span>Explore Hospital Division</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          ) : (
+            <div className="font-mono text-xs font-bold uppercase tracking-wider text-[#0B0B0B] shrink-0 border-b-2 border-[#D81919] pb-1">
+              90-Day Territory Protection
+            </div>
+          )}
         </div>
       </div>
     </section>

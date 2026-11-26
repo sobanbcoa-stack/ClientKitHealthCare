@@ -23,16 +23,16 @@ export const Footer: React.FC = () => {
               <Logo size="md" theme="white" showTagline={true} />
             </button>
             <p className="text-neutral-300 text-xs sm:text-sm mt-3 leading-relaxed">
-              The local patient acquisition engine for hospitals, surgical centers, and clinics in Pakistan. In-person corporate outreach, localized doctor video content, and 1-tap WhatsApp consultation tokens.
+              The local patient acquisition engine for aesthetic clinics, dental practices, and hospitals in Pakistan. In-person local outreach, doctor authority reels, and 1-tap WhatsApp consultation tokens.
             </p>
             <div className="mt-3 text-[11px] font-mono text-[#FF4D4D] uppercase tracking-wider font-bold">
-              Strictly 1 Hospital Per 10-KM Territory Policy
+              Strictly 1 Partner Per 10-KM Territory Policy
             </div>
           </div>
 
           <div className="flex flex-col items-start md:items-end gap-3">
             <span className="text-xs text-neutral-300 font-medium">
-              Ready to dominate your 10-km radius?
+              Ready to dominate your 10-km radius in 90 days?
             </span>
             <button
               onClick={handleFooterWhatsApp}
@@ -44,21 +44,71 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Structured SEO Link Directory Columns */}
+        {/* Structured Link Directory Columns */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-b border-white/15">
           <div>
             <div className="text-white font-display font-bold mb-3 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
               <Building2 className="w-3.5 h-3.5 text-[#D81919]" />
-              8 Specialties
+              Clinics &amp; Portfolios
             </div>
-            <ul className="space-y-2">
-              {SPECIALTIES.map((spec) => (
+            <ul className="space-y-2 mb-5">
+              <li>
+                <button
+                  onClick={() => navigateTo('/portfolio')}
+                  className="hover:text-white transition-colors cursor-pointer text-left text-[#FF4D4D] font-bold block"
+                >
+                  All-Combined Portfolio
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigateTo('/portfolio/aesthetic')}
+                  className="hover:text-white transition-colors cursor-pointer text-left text-neutral-300 block"
+                >
+                  Aesthetic Clinics Portfolio
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigateTo('/portfolio/dental')}
+                  className="hover:text-white transition-colors cursor-pointer text-left text-neutral-300 block"
+                >
+                  Dental Clinics Portfolio
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigateTo('/aesthetic-clinics')}
+                  className="hover:text-white transition-colors cursor-pointer text-left text-neutral-400 block"
+                >
+                  Aesthetic Clinics Growth System
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigateTo('/dental-clinics')}
+                  className="hover:text-white transition-colors cursor-pointer text-left text-neutral-400 block"
+                >
+                  Dental Clinics Growth System
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigateTo('/hospitals')}
+                  className="hover:text-white transition-colors cursor-pointer text-left text-neutral-400 block"
+                >
+                  Proven Hospital Results (6)
+                </button>
+              </li>
+            </ul>
+            <ul className="space-y-1.5 pt-3 border-t border-white/10">
+              {SPECIALTIES.slice(0, 4).map((spec) => (
                 <li key={spec.slug}>
                   <button
                     onClick={() =>
                       navigateTo(`/specialties/${spec.slug}-marketing-agency-pakistan`)
                     }
-                    className="hover:text-white transition-colors cursor-pointer text-left text-neutral-400 truncate max-w-full block"
+                    className="hover:text-white transition-colors cursor-pointer text-left text-neutral-500 truncate max-w-full block text-[11px]"
                   >
                     {spec.name}
                   </button>
@@ -187,24 +237,24 @@ export const Footer: React.FC = () => {
         {/* Bottom Legal & Mirror Row */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-xs text-neutral-500">
           <div>
-            © {new Date().getFullYear()} ClientKit. All rights reserved. Dominate your area in 30 days or we work for free.
+            © {new Date().getFullYear()} ClientKit. All rights reserved. Dominate your area in 90 days or we work for free.
           </div>
           <div className="flex flex-wrap items-center justify-center gap-5 text-neutral-400 font-medium">
             <button onClick={() => navigateTo('/')} className="hover:text-white transition-colors cursor-pointer">
               Home
             </button>
-            <a href="/#results" className="hover:text-white transition-colors">
-              Results
-            </a>
-            <a href="/#pillars" className="hover:text-white transition-colors">
-              The System
-            </a>
-            <a href="/#how-it-works" className="hover:text-white transition-colors">
-              5-Step Funnel
-            </a>
-            <a href="/#calculator" className="hover:text-white transition-colors">
-              Calculator
-            </a>
+            <button onClick={() => navigateTo('/portfolio')} className="hover:text-white transition-colors cursor-pointer">
+              Portfolio
+            </button>
+            <button onClick={() => navigateTo('/aesthetic-clinics')} className="hover:text-white transition-colors cursor-pointer">
+              Aesthetic Clinics
+            </button>
+            <button onClick={() => navigateTo('/dental-clinics')} className="hover:text-white transition-colors cursor-pointer">
+              Dental Clinics
+            </button>
+            <button onClick={() => navigateTo('/hospitals')} className="hover:text-white transition-colors cursor-pointer">
+              Hospitals
+            </button>
             <a href="/#faq" className="hover:text-white transition-colors">
               FAQ
             </a>

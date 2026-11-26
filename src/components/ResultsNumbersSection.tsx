@@ -6,17 +6,17 @@ export const ResultsNumbersSection: React.FC = () => {
     {
       index: '1.',
       label: 'VERIFIED PATIENTS',
-      value: '1,700+ / 30 DAYS',
+      value: '2,100+ / 90 DAYS',
     },
     {
       index: '2.',
-      label: 'PARTNER HOSPITALS',
+      label: 'PARTNER CLINICS & HOSPITALS',
       value: '25+ IN PAKISTAN',
     },
     {
       index: '3.',
       label: 'TERRITORY CAP',
-      value: '1 HOSPITAL PER 10-KM',
+      value: '1 PARTNER PER 10-KM',
     },
   ];
 

@@ -42,79 +42,79 @@ export interface FaqItem {
 export const PAIN_POINTS: PainPoint[] = [
   {
     num: '01',
-    title: 'Wasted Billboard Budgets',
-    text: 'Spending big money on roadside billboards that drivers pass in 2 seconds without remembering your clinic or specialties.',
+    title: 'Discount Wars on HydraFacial & Scaling',
+    text: 'Competing purely on social media coupon discounts attracts bargain-hunters instead of loyal laser, veneer, aligner, and dermatology patients.',
   },
   {
     num: '02',
-    title: 'Doctor Burnout on Social Media',
-    text: 'Asking busy surgeons and consultants to record daily social media posts—it quickly fails and wastes precious medical hours.',
+    title: 'Consultant & Doctor Content Burnout',
+    text: 'Asking busy aesthetic physicians, dermatologists, and dental surgeons to shoot daily social videos quickly fails and drains clinical chair hours.',
   },
   {
     num: '03',
-    title: 'Aggregator Booking Apps Hijacking Patients',
-    text: 'Paying hefty fees to medical directory apps that display your direct competitor clinics and competing doctors right next to your profile.',
+    title: 'Aggregator Apps & Directories Hijacking Intent',
+    text: 'Paying booking portals that place rival dental practices and aesthetic studios right beside your clinic name on search.',
   },
   {
     num: '04',
-    title: 'Zero Local B2B Corporate Penetration',
-    text: 'Nearby corporate towers, banks, and schools within 5–10 km do not know your diagnostic packages, emergency bay, or specialist doctors.',
+    title: 'Zero Local B2B Office & Salon Penetration',
+    text: 'Nearby corporate towers, banks, universities, and luxury salons within 5–10 km do not know your aligner plans, laser packages, or VIP corporate perks.',
   },
   {
     num: '05',
-    title: 'Competitor Chains Stealing Your Territory',
-    text: 'Large national hospital chains opening satellite clinics in your neighborhood and taking away your loyal patient base.',
+    title: 'Competitor Chains Opening Around Your Corner',
+    text: 'Multi-branch clinics moving into your DHA, Clifton, or Gulberg catchment with heavy budgets and taking your repeat neighborhood families.',
   },
 ];
 
 export const FUNNEL_STEPS: FunnelStep[] = [
   {
     step: 1,
-    title: 'In-Person Corporate & Community Outreach',
-    shortTitle: 'B2B Ground Outreach',
-    subtitle: 'We visit local offices in person with VIP cards and irresistible health checkup offers.',
+    title: 'In-Person Corporate, Campus & Salon Outreach',
+    shortTitle: '10-KM Ground Capture',
+    subtitle: 'We visit local offices, banks, and lifestyle hubs in person with VIP clinic privilege cards.',
     description:
-      'Our dedicated field team physically walks into major corporate offices, bank regional branches, and residential communities within your 10-km radius. We introduce your medical facility, hand over official health privilege cards, and collect verified, opt-in patient and corporate HR contacts one by one.',
+      'Our dedicated field team physically walks into major corporate offices, bank regional branches, bridal studios, and residential communities within your 10-km radius. We introduce your dental or aesthetic clinic, hand over official VIP privilege cards, and collect verified opt-in local leads.',
     icon: 'Users',
     badge: 'Step 01: Ground Capture',
   },
   {
     step: 2,
-    title: 'Hyper-Local Social Retargeting',
+    title: 'Hyper-Local 10-KM Social Retargeting',
     shortTitle: 'Local Area Retargeting',
-    subtitle: 'Repeatedly showing your doctors and facilities across all their family social feeds.',
+    subtitle: 'Repeatedly placing your lead doctors and clinic results across nearby family social feeds.',
     description:
-      'We retarget the verified contacts and everyone living or working in your exact 10-kilometer radius across Facebook, Instagram, and YouTube. Instead of random national ads, every impression is seen by a real nearby family that can actually walk into your hospital.',
+      'We retarget those verified contacts and surrounding households inside your exact 10-kilometer perimeter across Instagram, Facebook, and YouTube. Every rupee reaches real people living or working minutes from your clinic doors.',
     icon: 'Smartphone',
     badge: 'Step 02: Area Retargeting',
   },
   {
     step: 3,
-    title: 'The 5-Hour Doctor Trust Engine',
+    title: 'The 5-Hour Doctor Authority Engine',
     shortTitle: '5-Hour Content Engine',
-    subtitle: 'Your doctors give just 5 hours a month to record 5 core pieces of medical advice.',
+    subtitle: 'Your dermatologists or dental specialists give just 5 hours a month to film 5 core topics.',
     description:
-      'To build deep clinical authority, your specialists spend only 5 hours once a month recording 5 core educational pieces. Our studio team edits, formats, and republishes those 5 pieces into 100 short video reels, patient FAQ clips, and symptom guides targeted to local phones.',
+      'Your doctors sit down for just 5 structured hours once a month answering high-value procedure questions (implants, aligners, veneers, laser hair removal, Morpheus8). Our studio edits and turns those 5 sessions into 100 vertical clips.',
     icon: 'Video',
     badge: 'Step 03: Clinical Authority',
   },
   {
     step: 4,
-    title: 'Uncontested Local Mindshare',
+    title: 'Uncontested Neighborhood Mindshare',
     shortTitle: 'Top-Of-Mind Recall',
-    subtitle: 'Whenever anyone in your 10-km radius needs care, your clinic is their default choice.',
+    subtitle: 'Whenever anyone in your 10-km zone thinks skin care, laser, veneers, or implants—they think of you.',
     description:
-      'Because your hospital is visible everywhere on their phones and in their offices, families recognize your consultants before they ever get sick. When an emergency or elective procedure arises, your hospital is their first and only instinct.',
+      'With your doctors visible across local phones and privilege cards sitting on nearby corporate desks, families trust your clinic before booking anywhere else.',
     icon: 'HeartPulse',
     badge: 'Step 04: Market Monopoly',
   },
   {
     step: 5,
-    title: 'Direct WhatsApp Appointment & Surgery Tokens',
-    shortTitle: '1-Tap WhatsApp Conversion',
-    subtitle: 'No complex web forms. Fast appointment tokens issued directly on WhatsApp in 60 seconds.',
+    title: '1-Tap WhatsApp Assessment & Consultation Tokens',
+    shortTitle: '1-Tap WhatsApp Booking',
+    subtitle: 'Patients send smile photos, X-rays, or skin concerns and book chair time in 60 seconds.',
     description:
-      'Every video, corporate card, and local campaign routes straight into your hospital WhatsApp. Patients easily share previous lab reports, ask questions directly to your care desk, and lock in confirmed consultation tokens in under a minute.',
+      'Every video and corporate invitation links straight to your clinic WhatsApp. Patients skip slow web forms, share concerns privately with your care desk, and lock confirmed consultation slots effortlessly.',
     icon: 'MessageCircle',
     badge: 'Step 05: Direct Bookings',
   },
@@ -128,14 +128,14 @@ export const CLINIC_FACILITIES: ClinicFacility[] = [
     specialty: 'Tertiary Care, Specialist OPD & Inpatient Surgery',
     imageUrl: '/assets/aistudio/image_487690e8.png',
     resultHeadline: '+248 OPD Consultations & 36 Surgeries',
-    daysToResult: 'In the first 30 days',
+    daysToResult: 'Verified 30-Day Surge',
     resultMetricPills: [
       { label: 'OPD Patients', value: '+248' },
       { label: 'Elective Surgeries', value: '+36' },
-      { label: '30-Day Growth', value: '3.8x ROI' },
+      { label: 'Hospital Growth', value: '3.8x ROI' },
     ],
     resultDetails:
-      'Replaced roadside billboard ad spend with localized doctor video tips and in-person corporate desk outreach across Clifton & DHA. Filled OPD slots and expanded surgical bookings within 30 days.',
+      'Replaced roadside billboard ad spend with localized doctor video tips and in-person corporate desk outreach across Clifton & DHA.',
   },
   {
     id: 'hosp-2',
@@ -144,14 +144,14 @@ export const CLINIC_FACILITIES: ClinicFacility[] = [
     specialty: 'Multi-Discipline Tertiary Hospital & Emergency',
     imageUrl: '/assets/aistudio/image_bff0d8da.png',
     resultHeadline: '+312 OPD Visits & 44 Booked Procedures',
-    daysToResult: 'In the first 30 days',
+    daysToResult: 'Verified 30-Day Surge',
     resultMetricPills: [
       { label: 'OPD Growth', value: '+312' },
       { label: 'Procedures', value: '+44' },
       { label: 'Corporate Leads', value: '6 MOUs' },
     ],
     resultDetails:
-      'Executed ground outreach across Gulshan commercial plazas and retargeted 10-km radius households. Corporate screening camps drove immediate patient volume and filled morning OPD clinics.',
+      'Executed ground outreach across Gulshan commercial plazas and retargeted 10-km radius households.',
   },
   {
     id: 'hosp-3',
@@ -160,14 +160,14 @@ export const CLINIC_FACILITIES: ClinicFacility[] = [
     specialty: 'Cardiac Care, Cath Lab & Intensive Care',
     imageUrl: '/assets/aistudio/image_cd259425.png',
     resultHeadline: '+194 Cardiac Consultations & 28 Stent Inquiries',
-    daysToResult: 'In the first 30 days',
+    daysToResult: 'Verified 30-Day Surge',
     resultMetricPills: [
       { label: 'Cardiac Consults', value: '+194' },
       { label: 'Angio/Stents', value: '+28' },
       { label: 'Response Time', value: '<2 min' },
     ],
     resultDetails:
-      'Positioned cardiologist educational video snippets on heart health. Direct WhatsApp token scheduling filled morning and evening clinics without chaotic lobby wait times.',
+      'Positioned cardiologist educational video snippets on heart health with direct WhatsApp token scheduling.',
   },
   {
     id: 'hosp-4',
@@ -176,14 +176,14 @@ export const CLINIC_FACILITIES: ClinicFacility[] = [
     specialty: 'General Surgery, Maternity & Corporate Wellness',
     imageUrl: '/assets/aistudio/image_96b88829.png',
     resultHeadline: '4 Corporate MOUs & 480 Screening Packages',
-    daysToResult: 'In the first 30 days',
+    daysToResult: 'Verified 30-Day Surge',
     resultMetricPills: [
       { label: 'Corporate MOUs', value: '4 Signed' },
       { label: 'Packages Sold', value: '480' },
       { label: 'B2B Revenue', value: 'Rs. 5.4M' },
     ],
     resultDetails:
-      'Field team conducted in-person B2B visits with handsome VIP health packages to tech companies and banks on Shahrah-e-Faisal. Converted 4 major corporate employee health accounts.',
+      'Field team conducted in-person B2B visits with handsome VIP health packages to tech companies and banks on Shahrah-e-Faisal.',
   },
   {
     id: 'hosp-5',
@@ -192,14 +192,14 @@ export const CLINIC_FACILITIES: ClinicFacility[] = [
     specialty: 'Advanced Ophthalmology & Refractive Eye Care',
     imageUrl: '/assets/aistudio/image_ca6d0ffe.png',
     resultHeadline: '+390 Eye Screenings & 85 Cataract/LASIK Procedures',
-    daysToResult: 'In the first 30 days',
+    daysToResult: 'Verified 30-Day Surge',
     resultMetricPills: [
       { label: 'Inquiries', value: '+390' },
       { label: 'Surgeries', value: '+85' },
       { label: 'Conversion', value: '4.4x' },
     ],
     resultDetails:
-      'Hyper-targeted local 10-km video campaigns answering common cataract and LASIK concerns, directing patient questions straight into WhatsApp for instant token booking.',
+      'Hyper-targeted local 10-km video campaigns answering common cataract and LASIK concerns, routing patients straight into WhatsApp.',
   },
   {
     id: 'hosp-6',
@@ -208,91 +208,91 @@ export const CLINIC_FACILITIES: ClinicFacility[] = [
     specialty: 'Multi-Speciality Tertiary Care & Executive Health',
     imageUrl: '/assets/aistudio/image_6f544ae5.png',
     resultHeadline: '+280 Specialist Appointments & Rs. 6.8M Added Billing',
-    daysToResult: 'In the first 30 days',
+    daysToResult: 'Verified 30-Day Surge',
     resultMetricPills: [
       { label: 'Specialist Appts', value: '+280' },
       { label: 'New Patients', value: '62%' },
       { label: 'Net Added', value: 'Rs. 6.8M' },
     ],
     resultDetails:
-      'Systematically reached executive residents across DHA Lahore phases with premium doctor consultation offers and 1-tap WhatsApp doctor reservations.',
+      'Systematically reached executive residents across DHA Lahore phases with premium doctor consultation offers.',
   },
 ];
 
 export const COMPARISON_ROWS: ComparisonRow[] = [
   {
     point: 'Audience Targeting',
-    oldWay: 'Waste Rs. 300K–800K on billboards drivers pass in 2 seconds.',
-    clientKitWay: 'Show content strictly to families & businesses within your 10-km radius.',
-    inHouseWay: 'Generic Facebook posts seen only by internal staff and relatives.',
+    oldWay: 'Broad boosted posts seen across the whole city by tire-kickers.',
+    clientKitWay: 'Show content strictly to families, salons & offices within your 10-km radius.',
+    inHouseWay: 'Generic holiday graphics seen only by friends and staff.',
   },
   {
     point: 'Doctor Time Investment',
-    oldWay: 'Surgeons asked to film daily TikToks and waste 15+ hours a week.',
+    oldWay: 'Dermatologists or dentists pushed to film daily trends on their phone.',
     clientKitWay: 'Just 5 hours once a month. Our crew films, edits, and distributes everything.',
-    inHouseWay: 'Doctors ignore requests due to busy clinic and surgical rounds.',
+    inHouseWay: 'Doctors skip shoots due to packed OPD and procedure blocks.',
   },
   {
-    point: 'Content Output & Reach',
-    oldWay: 'Stock photo flyers and Canva banners that get 3 likes and zero appointments.',
-    clientKitWay: '100 high-definition video clips answering real local patient concerns.',
-    inHouseWay: '1–2 irregular holiday greeting flyers per month.',
+    point: 'Content Output & Authority',
+    oldWay: 'Stock photo Canva discount flyers that lower brand prestige.',
+    clientKitWay: '100 crisp educational reels answering real procedure fears & questions.',
+    inHouseWay: 'Irregular promotional flyers with zero patient trust.',
   },
   {
-    point: 'Local Corporate B2B Visits',
-    oldWay: 'Zero boots on the ground. Digital agencies never leave their desks.',
-    clientKitWay: 'Our team visits local corporate offices, banks & towers with handsome VIP offers.',
-    inHouseWay: 'No dedicated outreach staff or field network.',
+    point: 'Local B2B Ground Visits',
+    oldWay: 'Zero field presence. Agencies never step outside their office.',
+    clientKitWay: 'Our ground team visits local corporate offices, salons, banks & campuses.',
+    inHouseWay: 'No dedicated B2B acquisition or corporate outreach team.',
   },
   {
     point: 'Patient Booking Flow',
-    oldWay: 'Clunky 10-field web forms or busy reception phone lines with 70% drop-off.',
-    clientKitWay: '1-tap WhatsApp chat. Patients share reports and receive tokens in 60s.',
-    inHouseWay: 'Manual pen-and-paper appointment registers.',
+    oldWay: 'Unanswered Instagram DMs and long website forms.',
+    clientKitWay: '1-tap WhatsApp concierge. Photos, X-rays & confirmed tokens in 60s.',
+    inHouseWay: 'Slow manual reception follow-ups missing weekend inquiries.',
   },
   {
     point: 'Territory Exclusivity',
-    oldWay: 'Agencies gladly sign your competitor clinic right across the road.',
-    clientKitWay: 'Strictly ONE hospital or clinic per 10-km territory. Guaranteed.',
-    inHouseWay: 'Vulnerable to aggressive competitor saturation.',
+    oldWay: 'Agencies gladly manage your competing clinic across the street.',
+    clientKitWay: 'Strictly ONE Aesthetic or Dental partner per 10-km area. Guaranteed.',
+    inHouseWay: 'Vulnerable to local clinic chains capturing your sector.',
   },
 ];
 
 export const FAQ_ITEMS: FaqItem[] = [
   {
     category: 'Guarantee & Offer',
-    question: 'What is the "Dominate your area in 30 days or we work for free" guarantee?',
+    question: 'What is the "Dominate your area in 90 days or we work for free" guarantee?',
     answer:
-      'We stand 100% behind our execution. If we do not make your hospital the dominant choice and generate a substantial influx of verified patient consultations within your 10-km radius during the first 30 days, we continue working completely free of charge until that milestone is delivered. No excuses, no hidden clauses.',
+      'We stand 100% behind our execution. If we do not make your aesthetic clinic, dental practice, or hospital the dominant choice within your 10-km radius during the first 90 days, we continue working completely free of charge until that milestone is delivered. No excuses.',
+  },
+  {
+    category: 'Specialization',
+    question: 'Do you customize campaigns differently for Aesthetic Clinics vs. Dental Clinics?',
+    answer:
+      'Yes. Aesthetic clinics require trust-building education around laser safety, Morpheus8, HydraFacial, Fillers/Botox, and bridal skin journeys. Dental clinics require clear education around implants, ClearPath/aligners, porcelain veneers, and pain-free endodontics. We build dedicated funnels and field B2B routes for each.',
   },
   {
     category: 'Time Commitment',
-    question: 'How much time do our doctors have to give?',
+    question: 'How much time do our dermatologists or dental surgeons have to give?',
     answer:
-      'Only 5 hours once a month. Our production crew arrives at your hospital with cinematic cameras, wireless audio, and patient-centric question frameworks. Your consultants simply sit down and answer real clinical questions for 5 hours. We edit, subtitle, and repurpose those sessions into 100 localized video assets.',
+      'Only 5 hours once a month. Our studio crew arrives at your clinic with cinema lighting, wireless audio, and pre-scripted patient questions. Your specialists simply answer real procedure concerns for 5 hours, and we produce 100 localized short reels.',
   },
   {
     category: 'Exclusivity',
-    question: 'Will you work with our competitor in the same area?',
+    question: 'Will you work with a rival clinic in our same sector or neighborhood?',
     answer:
-      'Never. We maintain a strict territory exclusivity agreement: strictly ONE hospital or clinic per 10-kilometer radius. Once we partner with your facility, we reject all inquiries from rival clinics in your zone so that 100% of the patient volume flows to your reception.',
+      'Never. We maintain a strict 10-kilometer territory lock: strictly ONE partner clinic per specialty per 10-km zone. Once your clinic reserves its neighborhood (e.g., DHA Phase 6 or Clifton), competitors are locked out.',
   },
   {
-    category: 'Medical Ethics',
-    question: 'Is this compliant with medical ethics and healthcare standards?',
+    category: 'Instagram & Social Proof',
+    question: 'How does your team connect Instagram content directly to real clinic bookings?',
     answer:
-      'Yes, absolutely. We do not use sensationalized discounts, unethical claims, or gimmicky advertising. Every single asset is 100% educational health advisory (e.g., "Warning signs of gallstones" or "Post-operative orthopedic recovery"). It elevates your consultants’ clinical authority and earns genuine community respect.',
-  },
-  {
-    category: 'Patient Influx Speed',
-    question: 'How fast do we start getting new patients and corporate accounts?',
-    answer:
-      'In weeks 1 and 2, our ground outreach team begins visiting corporate offices, commercial centers, and residential communities with handsome health privilege offers to secure verified data and corporate camps. By weeks 3 and 4, your doctor reels are actively retargeting thousands of local families, and daily WhatsApp consultation requests begin arriving.',
+      'Followers alone do not pay bills—local neighborhood consultations do. Every piece of clinical content we produce focuses on high-margin procedures and pushes nearby viewers straight into 1-tap WhatsApp assessment tokens.',
   },
   {
     category: 'Booking Convenience',
-    question: 'Why do you route patient bookings through WhatsApp?',
+    question: 'Why do you route aesthetic & dental inquiries through WhatsApp?',
     answer:
-      'Over 95% of patients in Pakistan actively use WhatsApp daily. Patients dislike long web registration forms. Over WhatsApp, prospective patients can immediately send previous lab reports, ask questions directly to your care coordinator, and receive their confirmed consultation token in under 60 seconds.',
+      'Patients in Pakistan overwhelmingly prefer private WhatsApp chats over cold web forms. Prospective patients can easily share dental X-rays, smile photos, or skin concerns privately and receive a confirmed consultation slot in under 60 seconds.',
   },
 ];

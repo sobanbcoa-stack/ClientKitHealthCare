@@ -2,6 +2,13 @@ import { useEffect, useState } from 'react';
 
 export type RouteType =
   | 'home'
+  | 'portfolio-all'
+  | 'portfolio-aesthetic'
+  | 'portfolio-dental'
+  | 'niche-aesthetic'
+  | 'niche-dental'
+  | 'hospitals-page'
+  | 'case-study-detail'
   | 'national-specialty'
   | 'city-specialty'
   | 'sector-specialty'
@@ -19,7 +26,7 @@ export interface RouteMatch {
 }
 
 export function parsePath(pathname: string, hash: string): RouteMatch {
-  // If hash is used for routing (e.g. #/specialties/dental-clinic-marketing-agency-pakistan)
+  // If hash is used for routing (e.g. #/portfolio/aesthetic)
   let path = pathname;
   if (hash && hash.startsWith('#/')) {
     path = hash.substring(1);
@@ -33,17 +40,49 @@ export function parsePath(pathname: string, hash: string): RouteMatch {
     return { type: 'home', params: {}, rawPath: '/' };
   }
 
-  // 2. Master Directory / Sitemap / Indexing
+  // 2. Portfolio Routes
+  if (path === '/portfolio') {
+    return { type: 'portfolio-all', params: {}, rawPath: path };
+  }
+  if (path === '/portfolio/aesthetic') {
+    return { type: 'portfolio-aesthetic', params: {}, rawPath: path };
+  }
+  if (path === '/portfolio/dental') {
+    return { type: 'portfolio-dental', params: {}, rawPath: path };
+  }
+
+  // 3. Dedicated Niche & Hospitals Pages
+  if (path === '/aesthetic-clinics') {
+    return { type: 'niche-aesthetic', params: {}, rawPath: path };
+  }
+  if (path === '/dental-clinics') {
+    return { type: 'niche-dental', params: {}, rawPath: path };
+  }
+  if (path === '/hospitals') {
+    return { type: 'hospitals-page', params: {}, rawPath: path };
+  }
+
+  // 4. Individual Case Study Detail (/case-study/:slug)
+  const caseStudyMatch = path.match(/^\/case-study\/([^/]+)$/);
+  if (caseStudyMatch) {
+    return {
+      type: 'case-study-detail',
+      params: { slug: caseStudyMatch[1] },
+      rawPath: path
+    };
+  }
+
+  // 5. Master Directory / Sitemap / Indexing
   if (path === '/sitemap' || path === '/seo-index' || path === '/indexing-engine') {
     return { type: 'master-sitemap', params: {}, rawPath: path };
   }
 
-  // 3. Blog Index
+  // 6. Blog Index
   if (path === '/blog') {
     return { type: 'blog-index', params: {}, rawPath: path };
   }
 
-  // 4. Blog Post (/blog/:slug)
+  // 7. Blog Post (/blog/:slug)
   const blogMatch = path.match(/^\/blog\/([^/]+)$/);
   if (blogMatch) {
     return {
@@ -53,12 +92,12 @@ export function parsePath(pathname: string, hash: string): RouteMatch {
     };
   }
 
-  // 5. Directory Index
+  // 8. Directory Index
   if (path === '/directory' || path === '/compare') {
     return { type: 'directory-index', params: {}, rawPath: path };
   }
 
-  // 6. Competitor Compare (/compare/clientkit-vs-:competitor_slug)
+  // 9. Competitor Compare (/compare/clientkit-vs-:competitor_slug)
   const compareMatch = path.match(/^\/compare\/clientkit-vs-([^/]+)$/);
   if (compareMatch) {
     return {
@@ -68,7 +107,7 @@ export function parsePath(pathname: string, hash: string): RouteMatch {
     };
   }
 
-  // 7. City Directory (/directory/best-healthcare-marketing-agencies-:city_slug)
+  // 10. City Directory (/directory/best-healthcare-marketing-agencies-:city_slug)
   const dirMatch = path.match(/^\/directory\/best-healthcare-marketing-agencies-([^/]+)$/);
   if (dirMatch) {
     return {
@@ -78,7 +117,7 @@ export function parsePath(pathname: string, hash: string): RouteMatch {
     };
   }
 
-  // 8. National Specialty (/specialties/:slug-marketing-agency-pakistan)
+  // 11. National Specialty (/specialties/:slug-marketing-agency-pakistan)
   const specMatch = path.match(/^\/specialties\/([^/]+)-marketing-agency-pakistan$/);
   if (specMatch) {
     return {
@@ -98,7 +137,7 @@ export function parsePath(pathname: string, hash: string): RouteMatch {
     };
   }
 
-  // 9. Hyper-Local 10km Sector Page (/pk/:city_slug/:locality_slug/:slug-10km-domination)
+  // 12. Hyper-Local 10km Sector Page (/pk/:city_slug/:locality_slug/:slug-10km-domination)
   const sectorMatch = path.match(/^\/pk\/([^/]+)\/([^/]+)\/([^/]+)-10km-domination$/);
   if (sectorMatch) {
     return {
@@ -112,7 +151,7 @@ export function parsePath(pathname: string, hash: string): RouteMatch {
     };
   }
 
-  // 10. City × Specialty Page (/pk/:city_slug/:slug-patient-acquisition)
+  // 13. City × Specialty Page (/pk/:city_slug/:slug-patient-acquisition)
   const citySpecMatch = path.match(/^\/pk\/([^/]+)\/([^/]+)-patient-acquisition$/);
   if (citySpecMatch) {
     return {

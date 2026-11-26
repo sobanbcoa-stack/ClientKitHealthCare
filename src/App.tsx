@@ -6,8 +6,9 @@
 import React, { useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { ResultsNumbersSection } from './components/ResultsNumbersSection';
+import { CaseStudiesShowcase } from './components/CaseStudiesShowcase';
 import { ClinicsSection } from './components/ClinicsSection';
+import { ResultsNumbersSection } from './components/ResultsNumbersSection';
 import { ProblemSection } from './components/ProblemSection';
 import { PillarsSection } from './components/PillarsSection';
 import { FunnelSection } from './components/FunnelSection';
@@ -18,6 +19,11 @@ import { CtaSection } from './components/CtaSection';
 import { Footer } from './components/Footer';
 import { FloatingWidget } from './components/FloatingWidget';
 import { MobileStickyBar } from './components/MobileStickyBar';
+
+import { PortfolioView } from './components/PortfolioView';
+import { CaseStudyDetailView } from './components/CaseStudyDetailView';
+import { NicheLandingView } from './components/NicheLandingView';
+import { HospitalsPageView } from './components/HospitalsPageView';
 
 import { useCurrentRoute, updateHeadTags } from './utils/router';
 import { NationalSpecialtyView } from './components/seo/NationalSpecialtyView';
@@ -31,24 +37,29 @@ export default function App() {
   const route = useCurrentRoute();
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [route.rawPath]);
+
+  useEffect(() => {
     if (route.type === 'home') {
       updateHeadTags({
-        title: 'ClientKit - Dominate Your Area In 90 Days Or We Work For Free',
+        title: 'ClientKit™ — Aesthetic & Dental Clinic Growth in 90 Days or Free',
         description:
-          'ClientKit is the patient acquisition engine for Pakistani hospitals and clinics. Strictly 1 partner per 10km area. In-person ground game, medical telemarketing, and doctor video content.',
+          'ClientKit makes your aesthetic clinic, dental clinic, or hospital the #1 choice within your 10-kilometer radius in 90 days or we work for free.',
         schema: {
           '@context': 'https://schema.org',
           '@type': 'MarketingAgency',
           name: 'ClientKit',
           url: 'https://clientkit.site',
           description:
-            'Hyper-local patient acquisition engine for private hospitals, surgical centers, and clinics in Pakistan.',
+            'Hyper-local patient acquisition engine for aesthetic clinics, dental clinics, and hospitals in Pakistan.',
           areaServed: ['Karachi', 'Lahore', 'Islamabad', 'Rawalpindi', 'Faisalabad', 'Multan'],
           knowsAbout: [
+            'Aesthetic Clinic Patient Acquisition',
+            'Dental Clinic Marketing',
             'Hospital Patient Acquisition',
-            'Healthcare Telemarketing',
             'Local Doctor Video Content',
-            'Hospital Territory Exclusivity'
+            '10km Territory Exclusivity'
           ]
         }
       });
@@ -57,6 +68,20 @@ export default function App() {
 
   const renderContent = () => {
     switch (route.type) {
+      case 'portfolio-all':
+        return <PortfolioView mode="all" />;
+      case 'portfolio-aesthetic':
+        return <PortfolioView mode="aesthetic" />;
+      case 'portfolio-dental':
+        return <PortfolioView mode="dental" />;
+      case 'niche-aesthetic':
+        return <NicheLandingView niche="aesthetic" />;
+      case 'niche-dental':
+        return <NicheLandingView niche="dental" />;
+      case 'hospitals-page':
+        return <HospitalsPageView />;
+      case 'case-study-detail':
+        return <CaseStudyDetailView slug={route.params.slug} />;
       case 'national-specialty':
         return <NationalSpecialtyView specialtySlug={route.params.specialtySlug} />;
       case 'sector-specialty':
@@ -90,12 +115,15 @@ export default function App() {
       default:
         return (
           <main>
-            {/* 1. Hero Banner (Meadow Hill + Pixel T-Rex + Crisp Display) */}
+            {/* 1. Hero Banner (Meadow Hill + Pixel T-Rex + 90 Days Headline) */}
             <Hero />
-            {/* 2. Immediate Proven Hospital Results Right After the Banner, Followed by Numbers */}
+            {/* 2. Alternating Aesthetic & Dental Case Studies Showcase Right After Banner */}
+            <CaseStudiesShowcase />
+            {/* 3. Combined Proven Hospital Results (All 6 Hospitals) */}
             <ClinicsSection />
+            {/* 4. Numbers Showcase Section */}
             <ResultsNumbersSection />
-            {/* 3. Problem, System Pillars, Funnel, Comparison, Calculator, FAQ & Finale */}
+            {/* 5. Problem, System Pillars, Funnel, Comparison, Calculator, FAQ & Finale */}
             <ProblemSection />
             <PillarsSection />
             <FunnelSection />

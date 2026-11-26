@@ -7,7 +7,7 @@ export const CtaSection: React.FC = () => {
   const handleFinalCta = () => {
     openWhatsApp(
       WHATSAPP_NUMBER_RAW,
-      "Hi ClientKit! I want to dominate our 10-kilometer area in 30 days or you work for free. Let's chat about reserving our territory."
+      "Hi ClientKit! I want to dominate our 10-kilometer area in 90 days or you work for free. Let's chat about reserving our territory."
     );
   };
 
@@ -25,15 +25,15 @@ export const CtaSection: React.FC = () => {
         <div className="w-44 sm:w-64 h-2.5 sm:h-3 bg-[#D81919] mx-auto mb-8 sm:mb-10" />
 
         <div className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-[#0B0B0B] mb-4">
-          Strictly 1 Hospital Per 10-KM Territory
+          Strictly 1 Aesthetic or Dental Partner Per 10-KM Territory
         </div>
 
         <h2 className="font-display font-black uppercase text-[#D81919] tracking-[-0.03em] leading-[1.06] text-[clamp(1.85rem,4.6vw,3.6rem)] mb-6">
-          Dominate your area in 30 days or we work for free.
+          Dominate your area in 90 days or we work for free.
         </h2>
 
         <p className="text-sm sm:text-base text-[#262626] leading-relaxed max-w-2xl mx-auto mb-8">
-          Make sure every single household, business, and patient within your hospital's 10-kilometer radius comes to you, not anyone else. Check territory availability before a competing facility locks your zone.
+          Make sure every single household and business within your aesthetic clinic, dental clinic, or hospital 10-kilometer radius books with you, not anyone else. Reserve your zone before a competitor locks it.
         </p>
 
         {/* Quiet Editorial Proof Checklist */}
@@ -44,7 +44,7 @@ export const CtaSection: React.FC = () => {
           </span>
           <span className="inline-flex items-center gap-1.5">
             <CheckCircle2 className="w-4 h-4 text-[#D81919]" />
-            Zero billboard waste
+            Aesthetic &amp; dental tracks
           </span>
           <span className="inline-flex items-center gap-1.5">
             <CheckCircle2 className="w-4 h-4 text-[#D81919]" />
@@ -52,7 +52,7 @@ export const CtaSection: React.FC = () => {
           </span>
           <span className="inline-flex items-center gap-1.5">
             <CheckCircle2 className="w-4 h-4 text-[#D81919]" />
-            30-day guarantee
+            90-day guarantee
           </span>
         </div>
 

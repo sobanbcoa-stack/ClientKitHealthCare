@@ -24,10 +24,10 @@ export const ProblemSection: React.FC = () => {
               The Traditional Bottleneck
             </div>
             <h2 className="font-display font-black uppercase text-[#D81919] tracking-[-0.03em] leading-[1.04] text-[clamp(1.75rem,4vw,3rem)]">
-              Why Hospitals Lose Patients To Competitors
+              Why Clinics &amp; Hospitals Lose Patients To Competitors
             </h2>
             <p className="mt-3 text-sm sm:text-base text-[#262626]">
-              Most healthcare advertising drains cash because it speaks to an entire city instead of dominating the families right next door.
+              Most aesthetic, dental, and hospital ads drain budget on city-wide impressions instead of locking in high-value patients right inside your 10-km radius.
             </p>
           </div>
           <PixelHeartCluster size="sm" color="#0B0B0B" className="hidden md:block shrink-0" />
@@ -63,10 +63,10 @@ export const ProblemSection: React.FC = () => {
               The Simple Diagnosis
             </div>
             <div className="font-display font-black uppercase text-lg sm:text-xl text-white leading-snug">
-              You already have great doctors, surgical theaters, and equipment. Nearby families just don't know you yet.
+              You already deliver top clinical results. Nearby residents, salons &amp; offices just don't know you yet.
             </div>
             <p className="text-xs sm:text-sm text-neutral-300 mt-2.5 leading-relaxed">
-              We fix this in 30 days with physical 10-km corporate outreach, localized doctor reels, and instant WhatsApp booking tokens.
+              We fix this in 90 days with physical 10-km outreach, localized doctor authority reels, and 1-tap WhatsApp booking tokens.
             </p>
           </div>
 

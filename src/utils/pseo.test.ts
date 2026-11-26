@@ -67,8 +67,46 @@ test('Router properly parses City Directory URL', () => {
   assert.strictEqual(match.params.citySlug, 'karachi');
 });
 
+import {
+  getAlternatingCaseStudies,
+  getCaseStudiesByNiche,
+  getCaseStudyBySlug
+} from '../data/caseStudiesData.js';
+
 test('Router properly handles hash-based navigation for dev servers', () => {
   const match = parsePath('/', '#/blog/why-social-media-agencies-fail-hospitals-pakistan');
   assert.strictEqual(match.type, 'blog-post');
   assert.strictEqual(match.params.blogSlug, 'why-social-media-agencies-fail-hospitals-pakistan');
+});
+
+test('Router parses Portfolio, Niche, Hospitals, and Case Study routes cleanly', () => {
+  assert.strictEqual(parsePath('/portfolio', '').type, 'portfolio-all');
+  assert.strictEqual(parsePath('/portfolio/aesthetic', '').type, 'portfolio-aesthetic');
+  assert.strictEqual(parsePath('/portfolio/dental', '').type, 'portfolio-dental');
+  assert.strictEqual(parsePath('/aesthetic-clinics', '').type, 'niche-aesthetic');
+  assert.strictEqual(parsePath('/dental-clinics', '').type, 'niche-dental');
+  assert.strictEqual(parsePath('/hospitals', '').type, 'hospitals-page');
+
+  const csMatch = parsePath('/', '#/case-study/derma-studio');
+  assert.strictEqual(csMatch.type, 'case-study-detail');
+  assert.strictEqual(csMatch.params.slug, 'derma-studio');
+});
+
+test('Case study dataset strictly alternates Aesthetic and Dental clinics for homepage showcase', () => {
+  const alternating = getAlternatingCaseStudies();
+  assert.strictEqual(alternating.length, 8);
+  assert.strictEqual(getCaseStudiesByNiche('aesthetic').length, 4);
+  assert.strictEqual(getCaseStudiesByNiche('dental').length, 4);
+
+  for (let i = 0; i < alternating.length; i++) {
+    const expectedNiche = i % 2 === 0 ? 'aesthetic' : 'dental';
+    assert.strictEqual(
+      alternating[i].niche,
+      expectedNiche,
+      `Index ${i} (${alternating[i].name}) must be ${expectedNiche}`
+    );
+  }
+
+  assert.strictEqual(getCaseStudyBySlug('derma-studio')?.instagramHandle, '@dermastudio_official');
+  assert.strictEqual(getCaseStudyBySlug('dental-aesthetics')?.instagramHandle, '@dentalaestheticspk');
 });

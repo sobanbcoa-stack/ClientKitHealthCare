@@ -1,13 +1,14 @@
 import React from 'react';
 import { ArrowRight, ArrowDown } from 'lucide-react';
 import { WHATSAPP_NUMBER_RAW, openWhatsApp } from '../utils/calculator';
+import { navigateTo } from '../utils/router';
 import { PixelDino, PixelMushroom, PixelHeartCluster } from './BrandArt';
 
 export const Hero: React.FC = () => {
   const handleHeroCta = () => {
     openWhatsApp(
       WHATSAPP_NUMBER_RAW,
-      "Hi ClientKit! I want to dominate our 10-kilometer area in 90 days. Let's chat about how this works for our hospital / clinic."
+      "Hi ClientKit! I want our aesthetic or dental clinic to dominate our 10-kilometer area in 90 days. Let's chat."
     );
   };
 
@@ -16,8 +17,8 @@ export const Hero: React.FC = () => {
       {/* Main Editorial Content Container */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-20 text-center">
         {/* Quiet Unboxed Editorial Kicker (Zero-Pill Discipline) */}
-        <div className="font-mono font-bold text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#D81919] mb-4">
-          1 Hospital Per 10-KM Radius · Territory Exclusivity
+        <div className="font-mono font-bold text-[11px] sm:text-xs uppercase tracking-[0.18em] text-[#D81919] mb-4">
+          Aesthetic Clinics · Dental Clinics · Hospitals · 1 Partner Per 10-KM
         </div>
 
         {/* Clean, Effortlessly Readable High-Contrast Hero Headline (No Awkward Underlines) */}
@@ -29,9 +30,9 @@ export const Hero: React.FC = () => {
           </span>
         </h1>
 
-        {/* Preserved Subheading Copy */}
+        {/* Subheading Copy tailored for Aesthetic Clinics, Dental Clinics & Hospitals */}
         <p className="mt-5 sm:mt-6 text-base sm:text-lg text-[#3F3F46] font-medium leading-relaxed max-w-2xl mx-auto">
-          Make sure every single household and business, all the patients within your hospital 10-kilometer radius is coming to you, not anyone else. We will make sure all of that is done in just 90 days or we work for free.
+          Make sure every single household and business within your aesthetic clinic, dental practice, or hospital 10-kilometer radius books with you, not anyone else. Delivered in 90 days or we work for free.
         </p>
 
         {/* Primary Action + Secondary Anchor */}
@@ -48,18 +49,42 @@ export const Hero: React.FC = () => {
             href="#results"
             className="w-full sm:w-auto px-6 py-3.5 text-sm sm:text-base font-bold text-[#0B0B0B] bg-white hover:bg-[#F2F2F2] border-2 border-[#0B0B0B] transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
           >
-            <span>See Proven Results</span>
+            <span>See Clinic Case Studies</span>
             <ArrowDown className="w-4 h-4 text-[#D81919]" />
           </a>
         </div>
 
-        {/* Brand Signature Line Above the Hill (Echoing Page 1 Center URL) */}
-        <div className="mt-5 sm:mt-6 font-mono text-[11px] sm:text-xs font-semibold text-[#D81919] tracking-wider">
-          www.clientkit.site · Trusted by 25+ Hospitals & Specialty Clinics in Pakistan
+        {/* Niche Specialty Switchers directly below primary action */}
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs sm:text-sm font-bold text-[#1A1A1A]">
+          <button
+            onClick={() => navigateTo('/aesthetic-clinics')}
+            className="hover:text-[#D81919] underline decoration-black/25 hover:decoration-[#D81919] underline-offset-4 cursor-pointer whitespace-nowrap"
+          >
+            Aesthetic Clinics Track →
+          </button>
+          <span className="text-neutral-300" aria-hidden="true">/</span>
+          <button
+            onClick={() => navigateTo('/dental-clinics')}
+            className="hover:text-[#D81919] underline decoration-black/25 hover:decoration-[#D81919] underline-offset-4 cursor-pointer whitespace-nowrap"
+          >
+            Dental Clinics Track →
+          </button>
+          <span className="text-neutral-300" aria-hidden="true">/</span>
+          <button
+            onClick={() => navigateTo('/portfolio')}
+            className="hover:text-[#D81919] underline decoration-black/25 hover:decoration-[#D81919] underline-offset-4 cursor-pointer whitespace-nowrap"
+          >
+            Combined Portfolio →
+          </button>
+        </div>
+
+        {/* Brand Signature Line Above the Hill */}
+        <div className="mt-4 sm:mt-5 font-mono text-[11px] sm:text-xs font-semibold text-[#D81919] tracking-wider">
+          www.clientkit.site · Trusted by Leading Aesthetic, Dental &amp; Hospital Brands
         </div>
       </div>
 
-      {/* Floating Right Crimson Pixel Heart Cluster (Page 1 Signature Motif) */}
+      {/* Floating Right Crimson Pixel Heart Cluster */}
       <PixelHeartCluster
         size="lg"
         color="#D81919"
